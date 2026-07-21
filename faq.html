@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Preguntas frecuentes sobre los servicios de kairos-devs.cu: precios, plazos, soporte, SEO, pagos y migración. Cuba 🇨🇺" />
+  <meta name="keywords" content="FAQ, preguntas frecuentes, precios desarrollo web, plazos, soporte, SEO, pagos, migración" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kairos-devs.cu/faq.html" />
+  <link rel="icon" type="image/svg+xml" href="/og-image.svg" />
+  <link rel="apple-touch-icon" href="/og-image.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="kairos-devs.cu" />
+  <meta property="og:title" content="Preguntas frecuentes · kairos-devs.cu" />
+  <meta property="og:description" content="Respuestas sobre precios, plazos, soporte, SEO, pagos y migración. Cuba 🇨🇺" />
+  <meta property="og:url" content="https://kairos-devs.cu/faq.html" />
+  <meta property="og:image" content="https://kairos-devs.cu/og-image.svg" />
+  <meta property="og:locale" content="es_CU" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Preguntas frecuentes · kairos-devs.cu" />
+  <meta name="twitter:description" content="Precios, plazos, soporte, SEO, pagos y migración." />
+  <meta name="twitter:image" content="https://kairos-devs.cu/og-image.svg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "Preguntas frecuentes · kairos-devs.cu",
+    "url": "https://kairos-devs.cu/faq.html",
+    "description": "Preguntas frecuentes sobre precios, plazos, soporte, SEO, pagos y migración.",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cuánto cuesta un proyecto?", "acceptedAnswer": { "@type": "Answer", "text": "Cada proyecto es diferente. Diagnóstico gratuito y sin compromiso. Presupuesto cerrado por sprint." }},
+      { "@type": "Question", "name": "¿Cuánto tarda un desarrollo?", "acceptedAnswer": { "@type": "Answer", "text": "Una landing page en 7-14 días. Una tienda o agente IA toma entre 3 y 6 semanas." }},
+      { "@type": "Question", "name": "¿Ofrecen soporte después del lanzamiento?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. 30 días de soporte gratuito post-lanzamiento, después hay planes mensuales opcionales." }},
+      { "@type": "Question", "name": "¿Cubren SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Cada landing/e-commerce viene optimizado técnicamente para SEO. Para orgánico sostenido hay planes mensuales." }},
+      { "@type": "Question", "name": "¿Cómo funcionan los pagos?", "acceptedAnswer": { "@type": "Answer", "text": "50% al iniciar + 50% al entregar (cortos) o pagos por sprint (largos). Transferencia, PayPal, MLC." }},
+      { "@type": "Question", "name": "¿Pueden mejorar algo ya hecho?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, hacemos auditoría técnica + UX, identificamos cuellos de botella y proponemos plan de mejora por sprints." }}
+    ],
+    "isPartOf": { "@type": "WebSite", "name": "kairos-devs.cu", "url": "https://kairos-devs.cu/" }
+  }
+  </script>
+
+  <title>Preguntas frecuentes · kairos-devs.cu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="loader" id="loader">
+    <div class="loader__spin"></div>
+    <div class="loader__text">Cargando…</div>
+  </div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo" data-hover>kairos-devs.cu</a>
+    <div class="nav__links">
+      <a href="index.html" data-hover>Inicio</a>
+      <a href="servicios.html" data-hover>Servicios</a>
+      <a href="portafolio.html" data-hover>Portafolio</a>
+      <a href="faq.html" class="is-active" data-hover>FAQ</a>
+      <a href="contacto.html" data-hover>Contacto</a>
+    </div>
+    <a href="contacto.html" class="nav__cta" data-hover>Hablemos 🚀</a>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="hero__eyebrow fade-in">Preguntas frecuentes</span>
+      <h1 class="hero__title fade-in">Resolvemos tus dudas antes de empezar</h1>
+      <p class="hero__sub fade-in">Si no encuentras la respuesta, escríbenos por WhatsApp. Te respondemos en menos de 24h.</p>
+    </div>
+  </header>
+
+  <section id="faq">
+    <div class="container">
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Cuánto cuesta un proyecto?</summary>
+          <div class="faq__answer">Cada proyecto es diferente, por eso el diagnóstico es <strong>gratuito y sin compromiso</strong>. Te entregamos un presupuesto cerrado por sprint, sin sorpresas ni costos ocultos. Una landing page arranca desde cifras muy accesibles; plataformas a medida se cotizan según alcance.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Cuánto tarda un desarrollo?</summary>
+          <div class="faq__answer">Una landing page conversional se entrega en <strong>7-14 días</strong>. Una tienda online o agente IA toma entre <strong>3 y 6 semanas</strong>. Proyectos de mayor envergadura se dividen en sprints de 2-3 semanas, con demos semanales para que siempre veas el avance.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Ofrecen soporte después del lanzamiento?</summary>
+          <div class="faq__answer">Sí. Incluimos <strong>30 días de soporte gratuito</strong> post-lanzamiento para ajustes. Después hay planes mensuales opcionales (hosting, mantenimiento, optimización, mejoras) para que duermas tranquilo mientras tu producto sigue creciendo.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Cubren SEO y posicionamiento en Google?</summary>
+          <div class="faq__answer">Cada landing o e-commerce que entregamos viene <strong>optimizado técnicamente para SEO</strong>: estructura semántica, performance, schema, meta-tags y buenas prácticas Core Web Vitals. Para posicionamiento orgánico sostenido ofrecemos planes de Growth mensual.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Cómo funcionan los pagos?</summary>
+          <div class="faq__answer">Trabajamos en <strong>dos modalidades</strong>: 50% al iniciar + 50% al entregar (proyectos cortos) o pagos por sprint aprobado (proyectos largos). Aceptamos transferencia, PayPal, y para clientes en Cuba, MLC o acuerdos personalizados. Siempre con factura.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Y si ya tengo algo hecho y solo necesito mejorarlo?</summary>
+          <div class="faq__answer">Perfecto, es lo que más disfrutamos. Hacemos <strong>auditoría técnica + UX</strong> de tu producto, identificamos cuellos de botella y proponemos un plan de mejora por sprints. Migramos, refactorizamos o modernizamos sin tirar tu inversión previa.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 20px;">
+    <div class="container">
+      <div class="hero__ctas" style="justify-content:center; display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="contacto.html" class="btn-primary" data-hover>Otra pregunta → contarnos</a>
+        <a href="servicios.html" class="btn-ghost" data-hover>Ver servicios →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer__inner">
+      <div class="footer__logo">kairos-devs.cu</div>
+      <button class="footer__email" id="copyEmail" data-hover>
+        <i class="fa-regular fa-envelope"></i>
+        enmanuelmuletblanco@gmail.com
+        <small id="copyToast">¡Copiado al portapapeles!</small>
+      </button>
+      <div class="footer__social">
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> kairos-devs.cu · Hecho en Cuba 🇨🇺 con estándar global.</p>
+    </div>
+  </footer>
+
+  <div class="wa-float" id="wa-direct">
+    <div class="wa-float__tooltip">¿Hablamos por WhatsApp? 💬</div>
+    <a class="wa-float__btn" href="https://wa.me/5305146569?text=Hola%20%F0%9F%91%8B%20Vengo%20de%20kairos-devs.cu%20y%20quiero%20empezar%20un%20proyecto." target="_blank" rel="noopener" aria-label="Hablar por WhatsApp al +53 05146569" data-hover>
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="wa-float__badge" aria-hidden="true">En línea</span>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

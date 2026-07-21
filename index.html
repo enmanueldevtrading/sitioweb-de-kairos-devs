@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Enmanuel y equipo construyen automatizaciones, apps a medida y webs que convierten para PYMEs. Cuba 🇨🇺 con estándar global. Diagnóstico gratuito." />
+  <meta name="keywords" content="automatización, aplicaciones web, e-commerce, IA, Cuba, chatbots, RPA, software a medida, desarrollo web, dashboard, consultoría tech" />
+  <meta name="author" content="kairos-devs.cu" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kairos-devs.cu/" />
+  <link rel="icon" type="image/svg+xml" href="/og-image.svg" />
+  <link rel="apple-touch-icon" href="/og-image.svg" />
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Discord, Telegram) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="kairos-devs.cu" />
+  <meta property="og:title" content="kairos-devs.cu · Transformamos tu caos en orden digital" />
+  <meta property="og:description" content="Automatizaciones, apps a medida y webs que convierten. Diagnóstico gratis en menos de 24h. Cuba 🇨🇺 con estándar global." />
+  <meta property="og:url" content="https://kairos-devs.cu/" />
+  <meta property="og:image" content="https://kairos-devs.cu/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_CU" />
+  <meta property="og:locale:alternate" content="es_ES" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="kairos-devs.cu · Transformamos tu caos en orden digital" />
+  <meta name="twitter:description" content="Automatizaciones, apps a medida y webs que convierten para PYMEs. Diagnóstico gratis. Cuba 🇨🇺" />
+  <meta name="twitter:image" content="https://kairos-devs.cu/og-image.svg" />
+
+  <!-- JSON-LD structured data: LocalBusiness + Service catalog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "kairos-devs.cu",
+    "url": "https://kairos-devs.cu/",
+    "logo": "https://kairos-devs.cu/logo.png",
+    "image": "https://kairos-devs.cu/og-image.svg",
+    "description": "Enmanuel y un equipo multidisciplinario construyen automatizaciones, aplicaciones a medida y webs que convierten para pequeñas y medianas empresas. Desde Cuba 🇨🇺 con estándar global.",
+    "email": "enmanuelmuletblanco@gmail.com",
+    "telephone": "+53-05146569",
+    "priceRange": "$$",
+    "areaServed": ["CU", "US", "ES", "MX"],
+    "address": { "@type": "PostalAddress", "addressCountry": "CU" },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00", "closes": "18:00"
+    }],
+    "founder": {
+      "@type": "Person",
+      "name": "Enmanuel Mulet Blanco",
+      "jobTitle": "Fundador",
+      "knowsAbout": ["Desarrollo Web", "Automatización", "IA", "Bases de Datos", "E-commerce"]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de kairos-devs.cu",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing Pages Conversionales" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce con Pasarelas de Pago" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización con IA" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Robots RPA + Excel" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Apps en Tiempo Real" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "APIs y Microservicios" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dashboards Financieros y Operativos" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoría y Migración" }},
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas Contables a Medida" }}
+      ]
+    },
+    "sameAs": [
+      "https://wa.me/5305146569"
+    ]
+  }
+  </script>
+
+  <title>kairos-devs.cu · Transformamos tu caos en orden digital</title>
+
+  <!-- Tipografía: Inter (300, 600, 800) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Iconos: FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Three.js desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- LOADER DE ENTRADA -->
+  <div class="loader" id="loader">
+    <div class="loader__spin"></div>
+    <div class="loader__text">Cargando experiencia…</div>
+  </div>
+
+  <!-- CURSOR PERSONALIZADO -->
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo" data-hover>kairos-devs.cu</a>
+    <div class="nav__links">
+      <a href="index.html" data-hover>Inicio</a>
+      <a href="servicios.html" data-hover>Servicios</a>
+      <a href="portafolio.html" data-hover>Portafolio</a>
+      <a href="faq.html" data-hover>FAQ</a>
+      <a href="contacto.html" data-hover>Contacto</a>
+    </div>
+    <a href="contacto.html" class="nav__cta" data-hover>Hablemos 🚀</a>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </nav>
+
+  <!-- HERO con Three.js -->
+  <header class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero__content">
+      <span class="hero__eyebrow fade-in">Hecho en Cuba · Estándar global 🇨🇺</span>
+      <h1 class="hero__title fade-in">Transformamos tu caos en orden digital</h1>
+      <p class="hero__sub fade-in">
+        Automatizaciones inteligentes, aplicaciones a medida y webs que convierten.
+        Hecho en Cuba 🇨🇺 con estándar global.
+      </p>
+      <div class="hero__ctas fade-in">
+        <a href="#contacto" class="btn-primary" id="ctaHero" data-hover>Empezar proyecto</a>
+        <a href="#servicios" class="btn-ghost" data-hover>Ver servicios</a>
+      </div>
+      <p class="hero__microcopy fade-in">
+        <strong>Diagnóstico gratuito</strong> · Sin compromiso · Respuesta en menos de 24h
+      </p>
+    </div>
+  </header>
+
+  <!-- TECH MARQUEE (NUEVO) -->
+  <section class="tech-marquee" aria-label="Tecnologías que dominamos">
+    <p class="tech-marquee__title">Stack que dominamos</p>
+    <div class="tech-marquee__track-wrap">
+      <!-- Duplicado intencional para loop continuo sin huecos -->
+      <div class="tech-marquee__track">
+        <span class="tech-marquee__item"><i class="fa-brands fa-react"></i> React</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-node-js"></i> Node.js</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-python"></i> Python</span>
+        <span class="tech-marquee__item"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-aws"></i> AWS</span>
+        <span class="tech-marquee__item"><i class="fa-solid fa-brain"></i> OpenAI</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-docker"></i> Docker</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-js"></i> TypeScript</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-google"></i> GCP</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-figma"></i> Figma</span>
+        <!-- Duplicado -->
+        <span class="tech-marquee__item"><i class="fa-brands fa-react"></i> React</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-node-js"></i> Node.js</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-python"></i> Python</span>
+        <span class="tech-marquee__item"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-aws"></i> AWS</span>
+        <span class="tech-marquee__item"><i class="fa-solid fa-brain"></i> OpenAI</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-docker"></i> Docker</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-js"></i> TypeScript</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-google"></i> GCP</span>
+        <span class="tech-marquee__item"><i class="fa-brands fa-figma"></i> Figma</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMESAS (reemplaza los antiguos stats con números inventados) -->
+  <section class="stats" aria-label="Cómo trabajamos">
+    <div class="promise">
+      <div class="promise__card fade-in" data-hover>
+        <div class="promise__icon"><i class="fa-solid fa-handshake"></i></div>
+        <div class="promise__title">Diagnóstico gratis</div>
+        <div class="promise__desc">Conversamos sin compromiso. Te decimos qué vale la pena y qué no.</div>
+      </div>
+      <div class="promise__card fade-in" data-hover>
+        <div class="promise__icon"><i class="fa-solid fa-calendar-week"></i></div>
+        <div class="promise__title">Sprints semanales</div>
+        <div class="promise__desc">Ves avances cada semana. Feedback continuo. Cero cajas negras.</div>
+      </div>
+      <div class="promise__card fade-in" data-hover>
+        <div class="promise__icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="promise__title">&lt;24h respuesta</div>
+        <div class="promise__desc">Te respondemos el mismo día. Sin esperas eternas por email.</div>
+      </div>
+      <div class="promise__card fade-in" data-hover>
+        <div class="promise__icon"><i class="fa-solid fa-shapes"></i></div>
+        <div class="promise__title">100% a medida</div>
+        <div class="promise__desc">Diseñado para tu negocio. Nada genérico ni plantillas.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">Lo que resolvemos</p>
+        <h2 class="section__title">Servicios que pagan solos</h2>
+        <p class="section__sub">
+          ¿Tu negocio sigue atrapado en procesos manuales, hojas de cálculo o grupos de WhatsApp?
+          Cada servicio resuelve un problema real y deja dinero en tu mesa.
+        </p>
+      </div>
+
+      <div class="services__grid">
+        <article class="service-card fade-in" data-hover>
+          <div class="service-card__icon"><i class="fa-solid fa-bullseye"></i></div>
+          <p class="service-card__problem"><i class="fa-solid fa-triangle-exclamation"></i> ¿Te buscan en Google y no te encuentran?</p>
+          <h3 class="service-card__title">Landing Pages Conversionales</h3>
+          <p class="service-card__desc">Páginas que convierten visitas en clientes reales. Disponibles 24/7, sin depender de ti.</p>
+        </article>
+        <article class="service-card fade-in" data-hover>
+          <div class="service-card__icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <p class="service-card__problem"><i class="fa-solid fa-triangle-exclamation"></i> Vendes bien, ¿pero cobras mal o tarde?</p>
+          <h3 class="service-card__title">E-commerce con Pasarelas</h3>
+          <p class="service-card__desc">Tienda online con cobros automáticos. Duplica tus ventas sin contratar más gente.</p>
+        </article>
+        <article class="service-card fade-in" data-hover>
+          <div class="service-card__icon"><i class="fa-solid fa-robot"></i></div>
+          <p class="service-card__problem"><i class="fa-solid fa-triangle-exclamation"></i> ¿Pierdes horas respondiendo lo mismo?</p>
+          <h3 class="service-card__title">Automatización con IA</h3>
+          <p class="service-card__desc">Agentes IA que atienden, filtran y cierran ventas por ti mientras duermes.</p>
+        </article>
+        <article class="service-card fade-in" data-hover>
+          <div class="service-card__icon"><i class="fa-solid fa-gears"></i></div>
+          <p class="service-card__problem"><i class="fa-solid fa-triangle-exclamation"></i> Tareas repetitivas te consumen horas y generan errores</p>
+          <h3 class="service-card__title">Automatización RPA + Excel</h3>
+          <p class="service-card__desc">Robots y macros que conectan Excel, Sheets y sistemas legacy. Tu equipo se libera de tareas mecánicas.</p>
+        </article>
+        <article class="service-card fade-in" data-hover>
+          <div class="service-card__icon"><i class="fa-solid fa-bolt"></i></div>
+          <p class="service-card__problem"><i class="fa-solid fa-triangle-exclamation"></i> Tu info vive en Excel que nadie actualiza</p>
+          <h3 class="service-card__title">Web Apps en Tiempo Real</h3>
+          <p class="service-card__desc">Tu equipo trabaja en sincronía. Datos vivos, decisiones en segundos, no en semanas.</p>
+        </article>
+        <article class="service-card fade-in" data-hover>
+          <div class="service-card__icon"><i class="fa-solid fa-plug"></i></div>
+          <p class="service-card__problem"><i class="fa-solid fa-triangle-exclamation"></i> Tus sistemas no se hablan entre sí</p>
+          <h3 class="service-card__title">APIs y Microservicios</h3>
+          <p class="service-card__desc">Conectamos tu ERP, tu tienda, tu CRM. Tus datos fluyen sin copiar y pegar.</p>
+        </article>
+        <article class="service-card fade-in" data-hover>
+          <div class="service-card__icon"><i class="fa-solid fa-chart-line"></i></div>
+          <p class="service-card__problem"><i class="fa-solid fa-triangle-exclamation"></i> Decides a ciegas porque no ves los números</p>
+          <h3 class="service-card__title">Dashboards financieros y operativos</h3>
+          <p class="service-card__desc">Visualización en tiempo real de KPIs operativos y finanzas. Lo que no se mide, no mejora.</p>
+        </article>
+        <article class="service-card fade-in" data-hover>
+          <div class="service-card__icon"><i class="fa-solid fa-compass"></i></div>
+          <p class="service-card__problem"><i class="fa-solid fa-triangle-exclamation"></i> Tu tecnología quedó vieja y te frena</p>
+          <h3 class="service-card__title">Consultoría y Migración</h3>
+          <p class="service-card__desc">Migración sin dolor, sin pérdida de datos, sin downtime. Pasamos tu negocio al siguiente nivel.</p>
+        </article>
+        <article class="service-card fade-in" data-hover>
+          <div class="service-card__icon"><i class="fa-solid fa-calculator"></i></div>
+          <p class="service-card__problem"><i class="fa-solid fa-triangle-exclamation"></i> ¿Tu contabilidad vive entre Excel y hojas dispersas?</p>
+          <h3 class="service-card__title">Sistemas contables a medida</h3>
+          <p class="service-card__desc">Facturación, conciliación bancaria y reportes fiscales adaptados a tu normativa y país.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NICHOS: sección informativa para dueños de negocios en lenguaje claro -->
+  <section id="nichos">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">Habla tu idioma</p>
+        <h2 class="section__title">Dueños de negocios: ¿siguen perdiendo tiempo en tareas que podrían hacerse solas?</h2>
+      </div>
+
+      <!-- EL PROBLEMA: el dolor típicos de las PYMEs -->
+      <div class="nichos__intro fade-in">
+        <p class="nichos__intro-text">
+          ¿Te suena esto?<br><br>
+          Si tienes una <strong>clínica dental</strong>, pasas el día llamando a pacientes para recordarles la cita, buscando historiales en un cajón, y cuando termina la consulta, te toca hacer la factura a mano.<br><br>
+          Si tienes una <strong>clínica estética</strong>, las clientas te cancelan a último momento, no vuelven porque se les olvidó el seguimiento, y pierdes cientos al mes en citas vacías.<br><br>
+          Si tienes una <strong>constructora</strong>, tu día es contestar llamadas para dar presupuestos, ir a la obra, comprar materiales, y al final del mes no sabes cuánto ganaste realmente porque todo está en notas sueltas.<br><br>
+          Si tienes una <strong>tienda pequeña</strong> (abarrotes, carnicería, ferretería, ropa), cada semana te falta algo, no sabes cuánto hay de cada producto, y los encargos se pierden en papeles sueltos.<br><br>
+          Si tienes un <strong>restaurante o cafetería</strong>, los pedidos a domicilio te llegan por WhatsApp, los anotas en un papel, los pasas a la cocina, y cuando hay mucho trabajo, se te pierde un pedido o se duplica.<br><br>
+          No estás solo. Todos los negocios pasan por eso. <strong>Pero hay una forma de salir de ahí.</strong>
+        </p>
+      </div>
+
+      <!-- LA SOLUCIÓN: en cristiano -->
+      <div class="nichos__solution fade-in">
+        <div class="nichos__solution-inner">
+          <div class="nichos__solution-title">¿Y si todo eso se hiciera solo?</div>
+          <p class="nichos__solution-text">
+            Imagina que tu negocio tiene un asistente que hace automáticamente las tareas repetitivas: le recuerda al paciente su cita, le genera la factura al odontólogo, calcula presupuestos al constructor, avisa cuando falta stock al tendero, centraliza pedidos al dueño del restaurante.<br><br>
+            Eso es una <strong style="color: var(--accent)">automatización</strong>: un sistema que hace por ti lo repetitivo. Tú solo te dedicas a lo que sabes hacer.<br><br>
+            Tú no necesitas aprender a programar. <strong style="color: var(--accent)">Nosotros lo hacemos por ti</strong>. Solo nos dices qué tareas te quitan tiempo, y nosotros creamos el sistema.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 BENEFICIOS -->
+      <div class="nichos__benefits">
+        <div class="benefit-card fade-in" data-hover>
+          <div class="benefit-card__check"><i class="fa-solid fa-clock"></i></div>
+          <div class="benefit-card__title">Tiempo libre</div>
+          <div class="benefit-card__desc">Recuperas horas al día. En vez de llamar para recordar citas, atiendes mejor.</div>
+        </div>
+        <div class="benefit-card fade-in" data-hover>
+          <div class="benefit-card__check"><i class="fa-solid fa-bullseye"></i></div>
+          <div class="benefit-card__title">Menos errores</div>
+          <div class="benefit-card__desc">Se acaban los "se me olvidó", los pedidos perdidos y las facturas mal hechas.</div>
+        </div>
+        <div class="benefit-card fade-in" data-hover>
+          <div class="benefit-card__check"><i class="fa-solid fa-piggy-bank"></i></div>
+          <div class="benefit-card__title">Dinero ahorrado</div>
+          <div class="benefit-card__desc">No necesitás contratar a alguien solo para hacer tareas repetitivas.</div>
+        </div>
+        <div class="benefit-card fade-in" data-hover>
+          <div class="benefit-card__check"><i class="fa-solid fa-rocket"></i></div>
+          <div class="benefit-card__title">Creces sin caos</div>
+          <div class="benefit-card__desc">Cuando tu negocio crece, no se vuelve un desorden. La automatización escala con vos.</div>
+        </div>
+      </div>
+
+      <!-- 6 NICHOS SPECÍFICOS -->
+      <div class="section__head" style="margin-top:50px;margin-bottom:36px">
+        <p class="section__eyebrow">¿Cómo sería en tu negocio?</p>
+        <h2 class="section__title">Para cada nicho, una solución a medida</h2>
+      </div>
+
+      <div class="nichos__grid">
+        <!-- 1. Clínicas dentales -->
+        <article class="nicho-card fade-in" data-hover>
+          <div class="nicho-card__icon"><i class="fa-solid fa-tooth"></i></div>
+          <div class="nicho-card__name">Clínicas dentales y odontólogos</div>
+          <p class="nicho-card__sub">Recordar citas, gestionar historiales, facturar a mano.</p>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label">El problema</div>
+            <p class="nicho-card__text">Pasás el día llamando para recordar citas, buscando historiales en un cajón, y haciendo facturas a mano.</p>
+          </div>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label nicho-card__label--solution">Cómo lo resolvemos</div>
+            <p class="nicho-card__text">Sistema agenda citas desde tu web o WhatsApp, envía recordatorio automático un día antes y guarda historia clínica en la nube.</p>
+          </div>
+          <div class="nicho-card__result">Resultado: Menos del 5% de ausencias. Más pacientes atendidos. Menos estrés.</div>
+        </article>
+
+        <!-- 2. Clínicas estéticas -->
+        <article class="nicho-card fade-in" data-hover>
+          <div class="nicho-card__icon"><i class="fa-solid fa-syringe"></i></div>
+          <div class="nicho-card__name">Clínicas estéticas</div>
+          <p class="nicho-card__sub">Cancelaciones, seguimiento perdido, citas vacías.</p>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label">El problema</div>
+            <p class="nicho-card__text">Clientas cancelan a último minuto, no vuelven por seguimiento perdido y perdés cientos al mes en citas vacías.</p>
+          </div>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label nicho-card__label--solution">Cómo lo resolvemos</div>
+            <p class="nicho-card__text">Recordatorios de cuidados post-procedimiento, mensaje de seguimiento una semana después y oferta personalizada para la próxima sesión.</p>
+          </div>
+          <div class="nicho-card__result">Resultado: Más clientas recurrentes. Más ingresos estables.</div>
+        </article>
+
+        <!-- 3. Constructoras -->
+        <article class="nicho-card fade-in" data-hover>
+          <div class="nicho-card__icon"><i class="fa-solid fa-helmet-safety"></i></div>
+          <div class="nicho-card__name">Constructoras y contratistas</div>
+          <p class="nicho-card__sub">Presupuestos manuales, materiales, control de obra.</p>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label">El problema</div>
+            <p class="nicho-card__text">Presupuestos a mano, materiales que se acaban sin aviso, y al final del mes no sabés cuánto ganaste.</p>
+          </div>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label nicho-card__label--solution">Cómo lo resolvemos</div>
+            <p class="nicho-card__text">Cálculo automático de presupuestos con precios actualizados, alertas de avance y control de inventario de materiales.</p>
+          </div>
+          <div class="nicho-card__result">Resultado: Presupuestos en minutos, obras a tiempo, control total.</div>
+        </article>
+
+        <!-- 4. Tiendas pequeñas -->
+        <article class="nicho-card fade-in" data-hover>
+          <div class="nicho-card__icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="nicho-card__name">Tiendas pequeñas</div>
+          <p class="nicho-card__sub">Abarrotes, carnicerías, ferreterías, ropa.</p>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label">El problema</div>
+            <p class="nicho-card__text">Cada semana falta algo, no sabés cuánto hay, y los encargos se pierden en papeles sueltos.</p>
+          </div>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label nicho-card__label--solution">Cómo lo resolvemos</div>
+            <p class="nicho-card__text">Inventario automático con alertas de stock mínimo, encargos por WhatsApp que generan pedido y factura por cada venta.</p>
+          </div>
+          <div class="nicho-card__result">Resultado: Nunca más falta lo más vendido. Control total.</div>
+        </article>
+
+        <!-- 5. Restaurantes -->
+        <article class="nicho-card fade-in" data-hover>
+          <div class="nicho-card__icon"><i class="fa-solid fa-utensils"></i></div>
+          <div class="nicho-card__name">Restaurantes y cafeterías</div>
+          <p class="nicho-card__sub">Pedidos por WhatsApp, papel, deliveries.</p>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label">El problema</div>
+            <p class="nicho-card__text">Pedidos por WhatsApp, papel, cocina confundida, pedidos perdidos o duplicados en horas pico.</p>
+          </div>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label nicho-card__label--solution">Cómo lo resolvemos</div>
+            <p class="nicho-card__text">Sistema que centraliza canales, calcula tiempo de entrega, gestiona reservas y muestra la cocina en tiempo real.</p>
+          </div>
+          <div class="nicho-card__result">Resultado: Cero pedidos perdidos. Más ventas. Clientes contentos.</div>
+        </article>
+
+        <!-- 6. Negocios locales con redes -->
+        <article class="nicho-card fade-in" data-hover>
+          <div class="nicho-card__icon"><i class="fa-solid fa-store"></i></div>
+          <div class="nicho-card__name">Negocios locales con redes</div>
+          <p class="nicho-card__sub">Atención repetitiva en DM, respuestas lentas.</p>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label">El problema</div>
+            <p class="nicho-card__text">Recibís "¡hola, quiero!" en DM pero tardás en responder. Cuando respondés, ya compraron en otro lado.</p>
+          </div>
+          <div class="nicho-card__row">
+            <div class="nicho-card__label nicho-card__label--solution">Cómo lo resolvemos</div>
+            <p class="nicho-card__text">Chat automático en redes que responde al instante con precio, disponibilidad y cómo comprar. Atendés 100 a la vez sin contratar a nadie.</p>
+          </div>
+          <div class="nicho-card__result">Resultado: Más ventas, menos trabajo, atención 24/7.</div>
+        </article>
+      </div>
+
+      <!-- CTA FINAL -->
+      <div class="nichos__cta fade-in">
+        <h2 class="nichos__cta-title">El futuro de tu negocio ya está aquí.</h2>
+        <p class="nichos__cta-sub">
+          No necesitás ser experto en tecnología. Solo necesitás dar el primer paso.
+          Cuéntanos qué tarea te quita más tiempo y te mostramos cómo hacerla automática.
+          <br><br>
+          <strong style="color: var(--accent)">Es gratis saberlo. Es gratis preguntar.</strong>
+        </p>
+        <a href="#contacto" class="btn-primary" data-hover>Quiero automatizar mi negocio 🚀</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">Cómo trabajamos</p>
+        <h2 class="section__title">De la idea al lanzamiento en 3 pasos</h2>
+        <p class="section__sub">Transparencia total. Sin sorpresas. Sin letra pequeña.</p>
+      </div>
+
+      <div class="process__grid">
+        <div class="process-step" data-step>
+          <div class="process-step__num">01</div>
+          <h3 class="process-step__title">Diagnóstico</h3>
+          <p class="process-step__desc">Escuchamos, entendemos y proponemos. Sin costo. Te decimos qué sí y qué no vale la pena.</p>
+        </div>
+        <div class="process-step" data-step>
+          <div class="process-step__num">02</div>
+          <h3 class="process-step__title">Desarrollo Ágil</h3>
+          <p class="process-step__desc">Construimos en sprints cortos. Ves avances cada semana. Feedback continuo. Cero cajas negras.</p>
+        </div>
+        <div class="process-step" data-step>
+          <div class="process-step__num">03</div>
+          <h3 class="process-step__title">Lanzamiento + Soporte</h3>
+          <p class="process-step__desc">Salimos al mercado juntos. Soporte continuo. Optimizamos con datos reales desde el día 1.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS / EL EQUIPO: Enmanuel es la cara, detrás hay un equipo -->
+  <section id="equipo">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">El equipo</p>
+        <h2 class="section__title">Yo soy la cabeza, pero hay más detrás de mí</h2>
+        <p class="section__sub">Enmanuel es el único nombre que verás pública — estrategia, conversaciones contigo y dirección técnica. El trabajo lo construye un equipo multidisciplinario que responde al mismo objetivo.</p>
+      </div>
+
+      <div class="team">
+        <article class="team__featured fade-in" data-hover>
+          <div class="team__avatar">EM</div>
+          <h3 class="team__name">Enmanuel Mulet Blanco</h3>
+          <div class="team__role">Fundador · Cara visible</div>
+          <p class="team__desc">
+            Conversa contigo, entiende tu problema y propone el enfoque técnico.
+            Dirige cada sprint. Es el único contacto que tendrás — pero es solo
+            la punta del iceberg. Detrás hay roles especializados que ejecutan.
+          </p>
+          <div class="team__flags">
+            <span class="team__flag">📍 Cuba 🇨🇺</span>
+            <span class="team__flag">Español nativo</span>
+            <span class="team__flag">Inglés conversacional</span>
+          </div>
+        </article>
+
+        <div class="team__roles">
+          <div class="team__role-card fade-in" data-hover>
+            <div class="team__role-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+            <div>
+              <div class="team__role-title">Diseño · UX</div>
+              <div class="team__role-desc">Interfaces que el usuario final entiende y disfruta.</div>
+            </div>
+          </div>
+          <div class="team__role-card fade-in" data-hover>
+            <div class="team__role-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div>
+              <div class="team__role-title">Desarrollo</div>
+              <div class="team__role-desc">Construye el código — frontend, backend, integraciones.</div>
+            </div>
+          </div>
+          <div class="team__role-card fade-in" data-hover>
+            <div class="team__role-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <div class="team__role-title">Calidad · QA</div>
+              <div class="team__role-desc">Pruebas, soporte post-lanzamiento y mantenimiento.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO: 3 mini-UIs "Lo que podemos construir" (no claims de proyectos terminados) -->
+  <section id="portafolio">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">Lo que podemos construir</p>
+        <h2 class="section__title">Ideas de lo que podrías tener</h2>
+        <p class="section__sub">Ejemplos reales de productos típicos que construimos. Adaptamos cada uno a tu negocio.</p>
+      </div>
+
+      <div class="portfolio__grid">
+
+        <!-- 1: E-commerce Aurora.cu -->
+        <article class="project fade-in" data-hover>
+          <div class="mockup">
+            <div class="mockup__chrome">
+              <div class="mockup__dots"><span></span><span></span><span></span></div>
+              <div class="mockup__url">aurora.cu/producto/cuban-soul</div>
+            </div>
+            <div class="ec">
+              <div class="ec__nav">
+                <div class="ec__logo">AURORA</div>
+                <div class="ec__menu">
+                  <span>Mujer</span><span>Hombre</span><span>Niños</span><span>Sale</span>
+                </div>
+                <div class="ec__icons">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span class="ec__cart"><i class="fa-solid fa-bag-shopping"></i></span>
+                </div>
+              </div>
+              <div class="ec__main">
+                <div class="ec__product">
+                  <span class="ec__product-badge">NUEVO</span>
+                  <div class="ec__product-img"></div>
+                </div>
+                <div class="ec__info">
+                  <h4 class="ec__info-name">Camiseta Cuban Soul — Talla M</h4>
+                  <div class="ec__info-meta">100% algodón orgánico · Envío gratis</div>
+                  <div class="ec__rating">★★★★★ <small>· 124 reseñas</small></div>
+                  <div class="ec__price-row">
+                    <span class="ec__price-now">$45</span>
+                    <span class="ec__price-old">$60</span>
+                  </div>
+                  <span class="ec__btn" role="presentation">+ Añadir al carrito</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__caption">
+            <span class="project__tag">E-commerce</span>
+            <h3 class="project__title">Tienda online completa</h3>
+            <p class="project__result">Vitrina 24/7 con cobros automáticos, stock en tiempo real y panel para gestionar todo.</p>
+          </div>
+        </article>
+
+        <!-- 2: Agente IA conversacional -->
+        <article class="project fade-in" data-hover>
+          <div class="mockup">
+            <div class="mockup__chrome">
+              <div class="mockup__dots"><span></span><span></span><span></span></div>
+              <div class="mockup__url">chat.kairos-devs.cu/lucas</div>
+            </div>
+            <div class="chat">
+              <div class="chat__head">
+                <div class="chat__avatar"><i class="fa-solid fa-robot"></i></div>
+                <div>
+                  <div class="chat__name">LUCAS AI <span class="chat__status">En línea</span></div>
+                  <div class="chat__sub">Asistente virtual · Responde en segundos</div>
+                </div>
+              </div>
+              <div class="chat__msgs">
+                <div class="cht-msg cht-msg--bot">¡Hola Lucía! Soy Lucas, tu asistente. ¿En qué te ayudo hoy?</div>
+                <div class="cht-msg cht-msg--user">Quiero la camiseta Cuban Soul, talla M</div>
+                <div class="cht-msg cht-msg--bot">Te la aparto en 30 segundos. ¿Envío a La Habana o provincia?</div>
+                <div class="cht-msg cht-msg--typing"><span></span><span></span><span></span></div>
+              </div>
+              <div class="chat__input">
+                <span class="chat__placeholder">Escribe un mensaje…</span>
+                <span class="chat__send"><i class="fa-solid fa-paper-plane"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="project__caption">
+            <span class="project__tag">IA Conversacional</span>
+            <h3 class="project__title">Agente IA de atención</h3>
+            <p class="project__result">Responde, filtra y deriva consultas por ti. Ideal para WhatsApp, web y redes.</p>
+          </div>
+        </article>
+
+        <!-- 3: Dashboard de ventas en tiempo real -->
+        <article class="project fade-in" data-hover>
+          <div class="mockup">
+            <div class="mockup__chrome">
+              <div class="mockup__dots"><span></span><span></span><span></span></div>
+              <div class="mockup__url">app.retailpulse.cu/dashboard</div>
+            </div>
+            <div class="dash">
+              <div class="dash__top">
+                <span class="dash__title">Ventas — Hoy</span>
+                <span class="dash__live">● EN VIVO</span>
+              </div>
+              <div class="dash__kpis">
+                <div class="kpi">
+                  <div class="kpi__l">REVENUE</div>
+                  <div class="kpi__v">$8.4k</div>
+                  <div class="kpi__t kpi__t--up">↑ 12.4%</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpi__l">PEDIDOS</div>
+                  <div class="kpi__v">142</div>
+                  <div class="kpi__t kpi__t--up">↑ 8.1%</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpi__l">CONV.</div>
+                  <div class="kpi__v">3.8%</div>
+                  <div class="kpi__t kpi__t--dn">↓ 0.2%</div>
+                </div>
+              </div>
+              <div class="dash__chart">
+                <div class="dash__chart-head">
+                  <span class="dash__chart-title">Últimas 24h</span>
+                  <span class="dash__chart-rang">00:00 — 23:59</span>
+                </div>
+                <div class="dash__bars">
+                  <span style="--h: 45%"></span>
+                  <span style="--h: 65%"></span>
+                  <span style="--h: 40%"></span>
+                  <span style="--h: 80%"></span>
+                  <span style="--h: 55%"></span>
+                  <span style="--h: 90%"></span>
+                  <span style="--h: 70%"></span>
+                  <span style="--h: 100%"></span>
+                  <span style="--h: 60%"></span>
+                  <span style="--h: 75%"></span>
+                  <span style="--h: 50%"></span>
+                  <span style="--h: 85%"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__caption">
+            <span class="project__tag">Web App · Analytics</span>
+            <h3 class="project__title">Dashboard en tiempo real</h3>
+            <p class="project__result">Metrics claros de tu negocio: ventas, stock,KPIs. Tu equipo decide con datos, no con opiniones.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- CASOS DE ESTUDIO: 3 walkthroughs genéricos (sin nombres de clientes) -->
+  <section id="casos">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">Cómo resolvemos</p>
+        <h2 class="section__title">Problemas reales que ya sabemos resolver</h2>
+        <p class="section__sub">No son clientes: son los patrones de dolor típicos que vemos en PYMEs. Lo que funcionó para unos puede funcionarte a ti.</p>
+      </div>
+
+      <div class="cases__grid">
+        <!-- Caso 1: Inventario y stock -->
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <span class="case__type">Inventario y Stock</span>
+          <h3 class="case__title">Cuando la PYME no sabía cuánto tenía realmente</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Negocio con 4 empleados llevando el stock en libretas y Excel desactualizados. Pedidos rechazados por decir "tenemos" cuando ya no había.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Webapp de stock en tiempo real con lector de código de barras y alertas automáticas cuando un producto baja del mínimo.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">El dueño dejó de adivinar. Cada venta actualizaba el inventario. Las compras de reposición dejaron de ser reactivias.</p>
+          </div>
+        </article>
+
+        <!-- Caso 2: Atención al cliente saturada -->
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-comments"></i></div>
+          <span class="case__type">Atención al Cliente</span>
+          <h3 class="case__title">Restaurante saturado entre WhatsApp, llamadas y pedidos en mostrador</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Negocio de comida recibía pedidos por 3 canales simultáneos sin orden. La cocina confundía pedidos. El dueño contestaba mensajes en vez de atender.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Agente IA que centraliza WhatsApp, web y llamadas en un solo panel. La cocina ve pedidos ordenados por mesa y hora.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">El dueño volvió a vender. Los errores de cocina bajaron. Los clientes reciben respuesta inmediata en cualquier canal.</p>
+          </div>
+        </article>
+
+        <!-- Caso 3: Visibilidad financiera -->
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-coins"></i></div>
+          <span class="case__type">Finanzas y Control</span>
+          <h3 class="case__title">Empresa de servicios que no sabía cuánto ganaba por proyecto</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">20 proyectos activos, ingresos mezclados con gastos, Excel que solo entendía el dueño. Facturación a veces salía tarde o mal.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Sistema integral con módulos de proyectos, ingresos, gastos, facturación automática y dashboard con margen real por cliente.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">Identifica proyectos no rentables a tiempo. La facturación se automatizó. Todo el equipo ve las mismas cifras.</p>
+          </div>
+        </article>
+
+        <!-- Caso 4: Migración de Excel a sistema -->
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-file-excel"></i></div>
+          <span class="case__type">Migración Excel → Sistema</span>
+          <h3 class="case__title">Excel que ya nadie se atreve a tocar</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Hoja gigante con 30 columnas, fórmulas entrelazadas que solo entiende quien la creó. Cualquier cambio rompe todo. Nadie se atreve.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Análisis del Excel, modelado y migración gradual a una webapp donde cada campo tiene propósito y los datos están seguros.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">El Excel antiguo queda como respaldo. El sistema nuevo es mantenible, versionado y se puede usar desde el móvil.</p>
+          </div>
+        </article>
+
+        <!-- Caso 5: Sistema de contabilidad -->
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-calculator"></i></div>
+          <span class="case__type">Contabilidad y Fiscalidad</span>
+          <h3 class="case__title">Contador que pasaba semanas cerrando el mes</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Conciliación bancaria manual, facturas en papel escaneadas, reportes que se armaban con copiar-pegar entre 4 archivos.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Sistema contable a medida que importa extractos bancarios, categoriza gastos por reglas y emite facturas con serie fiscal.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">El cierre mensual pasó de 3 semanas a 2 días. El contador volvió a hacer asesoría en vez de picar números.</p>
+          </div>
+        </article>
+
+        <!-- Caso 6: App interna -->
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-user-shield"></i></div>
+          <span class="case__type">App Interna</span>
+          <h3 class="case__title">Equipo trabajando con la información desactualizada</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Operarios consultaban datos en papel. Decisiones en base a info vieja de días. Pérdidas por actuar tarde.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Webapp interna con login, dashboards en tiempo real y alertas push al móvil. Cada rol ve lo que le corresponde.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">El equipo trabaja con la misma foto actual del negocio. Las decisiones se toman con info viva, no con recuerdos.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (NUEVO) -->
+  <section id="faq">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">Preguntas frecuentes</p>
+        <h2 class="section__title">Resolvemos tus dudas antes de empezar</h2>
+        <p class="section__sub">Si no encuentras la respuesta, escríbenos por WhatsApp. Te respondemos en menos de 24h.</p>
+      </div>
+
+      <div class="faq__list fade-in">
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Cuánto cuesta un proyecto?</summary>
+          <div class="faq__answer">Cada proyecto es diferente, por eso el diagnóstico es <strong>gratuito y sin compromiso</strong>. Te entregamos un presupuesto cerrado por sprint, sin sorpresas ni costos ocultos. Una landing page arranca desde cifras muy accesibles; plataformas a medida se cotizan según alcance.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Cuánto tarda un desarrollo?</summary>
+          <div class="faq__answer">Una landing page conversional se entrega en <strong>7-14 días</strong>. Una tienda online o agente IA toma entre <strong>3 y 6 semanas</strong>. Proyectos de mayor envergadura se dividen en sprints de 2-3 semanas, con demos semanales para que siempre veas el avance.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Ofrecen soporte después del lanzamiento?</summary>
+          <div class="faq__answer">Sí. Incluimos <strong>30 días de soporte gratuito</strong> post-lanzamiento para ajustes. Después hay planes mensuales opcionales (hosting, mantenimiento, optimización, mejoras) para que duermas tranquilo mientras tu producto sigue creciendo.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Cubren SEO y posicionamiento en Google?</summary>
+          <div class="faq__answer">Cada landing o e-commerce que entregamos viene <strong>optimizado técnicamente para SEO</strong>: estructura semántica, performance, schema, meta-tags y buenas prácticas Core Web Vitals. Para posicionamiento orgánico sostenido ofrecemos planes de Growth mensual.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Cómo funcionan los pagos?</summary>
+          <div class="faq__answer">Trabajamos en <strong>dos modalidades</strong>: 50% al iniciar + 50% al entregar (proyectos cortos) o pagos por sprint aprobado (proyectos largos). Aceptamos transferencia, PayPal, y para clientes en Cuba, MLC o acuerdos personalizados. Siempre con factura.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__summary" data-hover>¿Y si ya tengo algo hecho y solo necesito mejorarlo?</summary>
+          <div class="faq__answer">Perfecto, es lo que más disfrutamos. Hacemos <strong>auditoría técnica + UX</strong> de tu producto, identificamos cuellos de botella y proponemos un plan de mejora por sprints. Migramos, refactorizamos o modernizamos sin tirar tu inversión previa.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENTAJA CUBA (NUEVO) -->
+  <section class="ventaja" aria-label="Por qué Cuba es una ventaja">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">Por qué Cuba 🇨🇺</p>
+        <h2 class="section__title">Geografía convertida en ventaja competitiva</h2>
+        <p class="section__sub">No es donde estamos. Es lo que eso significa para tu proyecto.</p>
+      </div>
+      <div class="ventaja__grid">
+        <div class="ventaja__card fade-in" data-hover>
+          <div class="ventaja__icon"><i class="fa-solid fa-clock"></i></div>
+          <h3 class="ventaja__title">Sincronía horaria perfecta</h3>
+          <p class="ventaja__desc">Cuba opera en EST (UTC-5). Reuniones en vivo, sin importar si tu equipo está en Miami, Madrid o México.</p>
+        </div>
+        <div class="ventaja__card fade-in" data-hover>
+          <div class="ventaja__icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h3 class="ventaja__title">Expertos en muchos temas</h3>
+          <p class="ventaja__desc">Dominamos un stack amplio: frontend, backend, IA, datos, mobile, e-commerce. Lo que tu negocio necesite, lo construimos.</p>
+        </div>
+        <div class="ventaja__card fade-in" data-hover>
+          <div class="ventaja__icon"><i class="fa-solid fa-coins"></i></div>
+          <h3 class="ventaja__title">Costo-beneficio agresivo</h3>
+          <p class="ventaja__desc">Calidad de Silicon Valley a una fracción del costo. Tu presupuesto rinde más sin sacrificar el estándar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO con FORMULARIO INLINE (NUEVO) -->
+  <section class="contact" id="contacto">
+    <div class="contact__grid">
+      <div class="contact__left fade-in">
+        <h2>¿Listo para dejar de <span>improvisar</span>?</h2>
+        <p>Cuéntanos qué te quita el sueño en tu negocio. Te respondemos en menos de <strong style="color: var(--accent)">24h</strong> con un plan claro, honesto y sin compromiso.</p>
+        <ul class="contact__list">
+          <li><i class="fa-solid fa-check"></i> Diagnóstico 100% gratuito, sin compromiso.</li>
+          <li><i class="fa-solid fa-check"></i> Presupuesto cerrado por sprint, sin sorpresas.</li>
+          <li><i class="fa-solid fa-check"></i> Soporte continuo después del lanzamiento.</li>
+          <li><i class="fa-solid fa-check"></i> Equipo senior, no juniors aprendiendo contigo.</li>
+        </ul>
+        <a href="https://wa.me/5305146569?text=Hola%20%F0%9F%91%8B%20Vengo%20de%20kairos-devs.cu%20y%20quiero%20empezar%20un%20proyecto."
+           target="_blank" rel="noopener"
+           class="contact__cta-whats" data-hover>
+          <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+        </a>
+      </div>
+
+      <form class="form fade-in" id="contactForm" novalidate>
+        <div class="form__row">
+          <label class="form__label" for="cf-name">Nombre</label>
+          <input class="form__input" type="text" id="cf-name" name="name"
+                 placeholder="¿Cómo te llamamos?" required minlength="2"
+                 autocomplete="name" />
+        </div>
+        <div class="form__row">
+          <label class="form__label" for="cf-email">Email</label>
+          <input class="form__input" type="email" id="cf-email" name="email"
+                 placeholder="tu@correo.com" required autocomplete="email" />
+        </div>
+        <div class="form__row">
+          <label class="form__label" for="cf-message">Cuéntanos brevemente</label>
+          <textarea class="form__textarea" id="cf-message" name="message"
+                    placeholder="¿Qué problema resolvemos? ¿Qué tienes en mente?" required minlength="10"
+                    autocomplete="off"></textarea>
+        </div>
+        <button type="submit" class="btn-primary form__submit" data-hover>
+          Enviar y abrir WhatsApp
+        </button>
+        <p class="form__hint"><i class="fa-solid fa-lock"></i> Te redirigimos a WhatsApp con tu mensaje pre-cargado.</p>
+        <div class="form__success">
+          <i class="fa-solid fa-circle-check"></i> ¡Listo! Estamos abriendo WhatsApp con tu mensaje…
+        </div>
+      </form>
+    </div>
+
+    <!-- Bloque de redes sociales prominente (WhatsApp, Instagram, Telegram, Facebook) -->
+    <!-- Sin href todavía — el cliente proveerá los enlaces pronto. -->
+    <div class="socials fade-in">
+      <p class="socials__title">También estamos en</p>
+      <div class="socials__row">
+        <a href="#" class="social-btn social-btn--wa" data-social-soon data-hover aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+        </a>
+        <a href="#" class="social-btn social-btn--ig" data-social-soon data-hover aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+        </a>
+        <a href="#" class="social-btn social-btn--tg" data-social-soon data-hover aria-label="Telegram">
+          <i class="fa-brands fa-telegram"></i><span>Telegram</span>
+        </a>
+        <a href="#" class="social-btn social-btn--fb" data-social-soon data-hover aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i><span>Facebook</span>
+        </a>
+        <a href="#" class="social-btn social-btn--tt" data-social-soon data-hover aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
+        </a>
+        <a href="#" class="social-btn social-btn--x" data-social-soon data-hover aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i><span>X</span>
+        </a>
+      </div>
+      <p class="socials__hint"><i class="fa-solid fa-link"></i> Enlaces disponibles pronto — te los pasamos al activarlos.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer__inner">
+      <div class="footer__logo">kairos-devs.cu</div>
+
+      <button class="footer__email" id="copyEmail" data-hover>
+        <i class="fa-regular fa-envelope"></i>
+        enmanuelmuletblanco@gmail.com
+        <small id="copyToast">¡Copiado al portapapeles!</small>
+      </button>
+
+      <div class="footer__social">
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Telegram">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+
+      <p class="footer__copy">© <span id="year"></span> kairos-devs.cu · Hecho en Cuba 🇨🇺 con estándar global.</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <div class="wa-float" id="wa-direct">
+    <div class="wa-float__tooltip">¿Hablamos por WhatsApp? 💬</div>
+    <a
+      class="wa-float__btn"
+      href="https://wa.me/5305146569?text=Hola%20%F0%9F%91%8B%20Vengo%20de%20kairos-devs.cu%20y%20quiero%20empezar%20un%20proyecto."
+      target="_blank"
+      rel="noopener"
+      aria-label="Hablar por WhatsApp al +53 05146569"
+      data-hover
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="wa-float__badge" aria-hidden="true">En línea</span>
+    </a>
+  </div>
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+  <script src="script.js"></script>
+</body>
+</html>

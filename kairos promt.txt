@@ -1,0 +1,66 @@
+Actúa como un Senior Full-Stack Developer y Diseñador UI/UX galardonado.
+
+Quiero UNA SOLA PÁGINA HTML (con CSS y JS embebido) para mi marca "kairos-devs.cu". Debe ser una experiencia de usuario premium, con los estándares de Stripe.
+
+REQUISITOS OBLIGATORIOS:
+
+1. **Fondo:** #0A0A0A (carbón) con un degradado sutil (#0A0A2A en esquinas).
+
+2. **HERO (3D + Parallax):**
+   - Usa Three.js (CDN) para crear un objeto central: un "cubo de nodos" (esferas unidas por líneas) que rota lentamente.
+   - Efecto Parallax: Al mover el mouse, el cubo se inclina -15deg a +15deg en X e Y (suavizado con lerp).
+   - Al hacer scroll hacia abajo, el cubo se desarma en partículas y se vuelve a armar al volver arriba.
+   - Fondo con 200 estrellas (partículas blancas) que se mueven ligeramente con el mouse.
+   - Título principal: "Transformamos tu caos en orden digital" con degradado animado (#00D4FF → #635BFF → #FF6B6B) que se mueve en bucle.
+   - Subtítulo: "Automatizaciones inteligentes, aplicaciones a medida y webs que convierten. Hecho en Cuba 🇨🇺 con estándar global."
+   - Botón CTA: "Empezar proyecto" con efecto de onda (ripple) y hover con brillo.
+
+3. **SECCIÓN "SERVICIOS" (8 tarjetas):**
+   - Organizadas en 2 filas de 4 (responsive a 1 columna en móvil).
+   - Cada tarjeta tiene: ícono (usar FontAwesome o CSS puro), título, descripción breve.
+   - Efecto: Al hacer hover, la tarjeta se eleva 20px, sombra neón (#00D4FF) y el borde se ilumina con gradiente animado.
+   - Servicios listados:
+     1. Landing Pages Conversionales
+     2. E-commerce con pasarelas
+     3. Automatización con IA (OpenAI)
+     4. Robots de automatización (RPA)
+     5. Web Apps en Tiempo Real
+     6. APIs y Microservicios
+     7. Dashboards y Analytics
+     8. Consultoría y Migración
+
+4. **SECCIÓN "PROCESO" (3 pasos):**
+   - Línea de tiempo horizontal con números (01, 02, 03) enormes.
+   - Al hacer scroll, los números se iluminan con neón y el texto aparece con fade-in.
+   - Pasos: "Diagnóstico" → "Desarrollo Ágil" → "Lanzamiento + Soporte".
+
+5. **SECCIÓN "PORTAFOLIO" (opcional):**
+   - 3 mockups de proyectos (usa placeholders de imágenes con gradientes).
+
+6. **SECCIÓN "TESTIMONIOS":**
+   - 2 testimonios ficticios (con estrellas y fotos de placeholder).
+
+7. **FOOTER:**
+   - Fondo #0A0A0A con borde superior #00D4FF.
+   - Logo "kairos-devs.cu" en grande.
+   - Email de contacto: hola@kairos-devs.cu (con efecto de copiado al hacer clic).
+   - Redes sociales (íconos: GitHub, LinkedIn, Twitter/X).
+
+8. **EFECTOS GLOBALES:**
+   - Cursor personalizado: un círculo de 30px que sigue al mouse (con retardo), con borde #00D4FF.
+   - Loader de entrada: el cubo 3D girando con un texto "Cargando experiencia..." hasta que todo esté listo.
+   - Scroll suave (behavior: smooth).
+   - Todas las animaciones a 60fps (use requestAnimationFrame).
+   - Tipografía: 'Inter' de Google Fonts (pesos 300, 600, 800).
+
+9. **TECNOLOGÍAS:**
+   - Three.js (desde CDN).
+   - CSS puro con variables.
+   - JavaScript vanilla (sin frameworks).
+
+10. **RESPONSIVE:**
+    - Mobile: menú hamburguesa, tarjetas en 1 columna, textos más pequeños.
+    - Tablet: tarjetas en 2 columnas.
+    - Desktop: layout completo.
+
+Entrégame el código HTML completo (un solo archivo) con comentarios explicativos en las secciones clave. Asegúrate de que no haya errores de consola y que el rendimiento sea óptimo.

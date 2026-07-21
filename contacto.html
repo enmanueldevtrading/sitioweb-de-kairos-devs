@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Hablemos de tu proyecto en kairos-devs.cu. Diagnóstico gratuito, sin compromiso. WhatsApp, email, Instagram, Telegram, Facebook, TikTok y X. Cuba 🇨🇺" />
+  <meta name="keywords" content="contacto, kairos-devs, diagnóstico gratis, WhatsApp Cuba, email, redes sociales" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kairos-devs.cu/contacto.html" />
+  <link rel="icon" type="image/svg+xml" href="/og-image.svg" />
+  <link rel="apple-touch-icon" href="/og-image.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="kairos-devs.cu" />
+  <meta property="og:title" content="Contacto · kairos-devs.cu" />
+  <meta property="og:description" content="Diagnóstico gratuito en menos de 24h. WhatsApp, email y redes sociales. Cuba 🇨🇺" />
+  <meta property="og:url" content="https://kairos-devs.cu/contacto.html" />
+  <meta property="og:image" content="https://kairos-devs.cu/og-image.svg" />
+  <meta property="og:locale" content="es_CU" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contacto · kairos-devs.cu" />
+  <meta name="twitter:description" content="Hablemos de tu proyecto. Diagnóstico gratuito en menos de 24h." />
+  <meta name="twitter:image" content="https://kairos-devs.cu/og-image.svg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto · kairos-devs.cu",
+    "url": "https://kairos-devs.cu/contacto.html",
+    "description": "Formulario de contacto, WhatsApp y redes sociales para hablar de tu proyecto.",
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "kairos-devs.cu",
+      "email": "enmanuelmuletblanco@gmail.com",
+      "telephone": "+53-05146569"
+    },
+    "isPartOf": { "@type": "WebSite", "name": "kairos-devs.cu", "url": "https://kairos-devs.cu/" }
+  }
+  </script>
+
+  <title>Contacto · kairos-devs.cu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="loader" id="loader">
+    <div class="loader__spin"></div>
+    <div class="loader__text">Cargando…</div>
+  </div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo" data-hover>kairos-devs.cu</a>
+    <div class="nav__links">
+      <a href="index.html" data-hover>Inicio</a>
+      <a href="servicios.html" data-hover>Servicios</a>
+      <a href="portafolio.html" data-hover>Portafolio</a>
+      <a href="faq.html" data-hover>FAQ</a>
+      <a href="contacto.html" class="is-active" data-hover>Contacto</a>
+    </div>
+    <a href="contacto.html" class="nav__cta" data-hover>Hablemos 🚀</a>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="hero__eyebrow fade-in">Cuéntanos qué te quita el sueño</span>
+      <h1 class="hero__title fade-in">¿Listo para dejar de improvisar?</h1>
+      <p class="hero__sub fade-in">Te respondemos en menos de <strong style="color: var(--accent)">24 horas</strong> con un plan claro, honesto y sin compromiso. Diagnóstico <strong style="color: var(--accent)">gratuito</strong>.</p>
+    </div>
+  </header>
+
+  <section class="contact" id="contacto">
+    <div class="contact__grid">
+      <div class="contact__left fade-in">
+        <h2>Elige cómo contactarnos</h2>
+        <p>Diagnóstico 100% gratuito, sin compromiso. Presupuesto cerrado por sprint, sin sorpresas. Soporte continuo después del lanzamiento. Equipo senior, no juniors aprendiendo contigo.</p>
+        <ul class="contact__list">
+          <li><i class="fa-solid fa-check"></i> Diagnóstico 100% gratuito, sin compromiso.</li>
+          <li><i class="fa-solid fa-check"></i> Presupuesto cerrado por sprint, sin sorpresas.</li>
+          <li><i class="fa-solid fa-check"></i> Soporte continuo después del lanzamiento.</li>
+          <li><i class="fa-solid fa-check"></i> Equipo senior, no juniors aprendiendo contigo.</li>
+        </ul>
+        <a href="https://wa.me/5305146569?text=Hola%20%F0%9F%91%8B%20Vengo%20de%20kairos-devs.cu%20y%20quiero%20empezar%20un%20proyecto." target="_blank" rel="noopener" class="contact__cta-whats" data-hover>
+          <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+        </a>
+      </div>
+
+      <form class="form fade-in" id="contactForm" novalidate>
+        <div class="form__row">
+          <label class="form__label" for="cf-name">Nombre</label>
+          <input class="form__input" type="text" id="cf-name" name="name" placeholder="¿Cómo te llamamos?" required minlength="2" autocomplete="name" />
+        </div>
+        <div class="form__row">
+          <label class="form__label" for="cf-email">Email</label>
+          <input class="form__input" type="email" id="cf-email" name="email" placeholder="tu@correo.com" required autocomplete="email" />
+        </div>
+        <div class="form__row">
+          <label class="form__label" for="cf-message">Cuéntanos brevemente</label>
+          <textarea class="form__textarea" id="cf-message" name="message" placeholder="¿Qué problema resolvemos? ¿Qué tienes en mente?" required minlength="10" autocomplete="off"></textarea>
+        </div>
+        <button type="submit" class="btn-primary form__submit" data-hover>
+          Enviar y abrir WhatsApp
+        </button>
+        <p class="form__hint"><i class="fa-solid fa-lock"></i> Te redirigimos a WhatsApp con tu mensaje pre-cargado.</p>
+        <div class="form__success">
+          <i class="fa-solid fa-circle-check"></i> ¡Listo! Estamos abriendo WhatsApp con tu mensaje…
+        </div>
+      </form>
+    </div>
+
+    <div class="socials fade-in">
+      <p class="socials__title">También estamos en</p>
+      <div class="socials__row">
+        <a href="#" class="social-btn social-btn--wa" data-social-soon data-hover aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="#" class="social-btn social-btn--ig" data-social-soon data-hover aria-label="Instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+        <a href="#" class="social-btn social-btn--tg" data-social-soon data-hover aria-label="Telegram"><i class="fa-brands fa-telegram"></i><span>Telegram</span></a>
+        <a href="#" class="social-btn social-btn--fb" data-social-soon data-hover aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></a>
+        <a href="#" class="social-btn social-btn--tt" data-social-soon data-hover aria-label="TikTok"><i class="fa-brands fa-tiktok"></i><span>TikTok</span></a>
+        <a href="#" class="social-btn social-btn--x" data-social-soon data-hover aria-label="X"><i class="fa-brands fa-x-twitter"></i><span>X</span></a>
+      </div>
+      <p class="socials__hint"><i class="fa-solid fa-link"></i> Enlaces disponibles pronto — te los pasamos al activarlos.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer__inner">
+      <div class="footer__logo">kairos-devs.cu</div>
+      <button class="footer__email" id="copyEmail" data-hover>
+        <i class="fa-regular fa-envelope"></i>
+        enmanuelmuletblanco@gmail.com
+        <small id="copyToast">¡Copiado al portapapeles!</small>
+      </button>
+      <div class="footer__social">
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> kairos-devs.cu · Hecho en Cuba 🇨🇺 con estándar global.</p>
+    </div>
+  </footer>
+
+  <div class="wa-float" id="wa-direct">
+    <div class="wa-float__tooltip">¿Hablamos por WhatsApp? 💬</div>
+    <a class="wa-float__btn" href="https://wa.me/5305146569?text=Hola%20%F0%9F%91%8B%20Vengo%20de%20kairos-devs.cu%20y%20quiero%20empezar%20un%20proyecto." target="_blank" rel="noopener" aria-label="Hablar por WhatsApp al +53 05146569" data-hover>
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="wa-float__badge" aria-hidden="true">En línea</span>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

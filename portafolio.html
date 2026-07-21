@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Lo que podemos construir en kairos-devs.cu: tiendas online, agentes IA, dashboards en tiempo real y 6 casos de estudio para PYMEs. Cuba 🇨🇺" />
+  <meta name="keywords" content="portafolio, ejemplos, tienda online, agente IA, dashboard, casos de estudio, kairos-devs" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kairos-devs.cu/portafolio.html" />
+  <link rel="icon" type="image/svg+xml" href="/og-image.svg" />
+  <link rel="apple-touch-icon" href="/og-image.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="kairos-devs.cu" />
+  <meta property="og:title" content="Portafolio · kairos-devs.cu" />
+  <meta property="og:description" content="Ejemplos de tiendas online, agentes IA y dashboards que podemos construir para tu negocio. 6 casos reales resueltos." />
+  <meta property="og:url" content="https://kairos-devs.cu/portafolio.html" />
+  <meta property="og:image" content="https://kairos-devs.cu/og-image.svg" />
+  <meta property="og:locale" content="es_CU" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portafolio · kairos-devs.cu" />
+  <meta name="twitter:description" content="Ejemplos reales de lo que construimos: tienda, IA, dashboards. Cuba 🇨🇺" />
+  <meta name="twitter:image" content="https://kairos-devs.cu/og-image.svg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": "Portafolio · kairos-devs.cu",
+    "url": "https://kairos-devs.cu/portafolio.html",
+    "description": "Ejemplos de productos típicos y casos de estudio resueltos por kairos-devs.cu.",
+    "isPartOf": { "@type": "WebSite", "name": "kairos-devs.cu", "url": "https://kairos-devs.cu/" }
+  }
+  </script>
+
+  <title>Portafolio · kairos-devs.cu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="loader" id="loader">
+    <div class="loader__spin"></div>
+    <div class="loader__text">Cargando…</div>
+  </div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo" data-hover>kairos-devs.cu</a>
+    <div class="nav__links">
+      <a href="index.html" data-hover>Inicio</a>
+      <a href="servicios.html" data-hover>Servicios</a>
+      <a href="portafolio.html" class="is-active" data-hover>Portafolio</a>
+      <a href="faq.html" data-hover>FAQ</a>
+      <a href="contacto.html" data-hover>Contacto</a>
+    </div>
+    <a href="contacto.html" class="nav__cta" data-hover>Hablemos 🚀</a>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="hero__eyebrow fade-in">Lo que podemos construir</span>
+      <h1 class="hero__title fade-in">Ideas de lo que podrías tener</h1>
+      <p class="hero__sub fade-in">Ejemplos reales de productos típicos que construimos. Adaptamos cada uno a tu negocio.</p>
+      <div class="hero__ctas fade-in">
+        <a href="contacto.html" class="btn-primary" data-hover>Hablemos de tu proyecto</a>
+        <a href="index.html" class="btn-ghost" data-hover>← Volver al inicio</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PORTAFOLIO: 3 mini-UIs -->
+  <section id="portafolio">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">Ejemplos visuales</p>
+        <h2 class="section__title">Mockups de productos típicos</h2>
+        <p class="section__sub">Lo que podrías tener funcionando en tu negocio, adaptado a tu marca.</p>
+      </div>
+
+      <div class="portfolio__grid">
+
+        <!-- E-commerce Aurora.cu -->
+        <article class="project fade-in" data-hover>
+          <div class="mockup">
+            <div class="mockup__chrome">
+              <div class="mockup__dots"><span></span><span></span><span></span></div>
+              <div class="mockup__url">aurora.cu/producto/cuban-soul</div>
+            </div>
+            <div class="ec">
+              <div class="ec__nav">
+                <div class="ec__logo">AURORA</div>
+                <div class="ec__menu"><span>Mujer</span><span>Hombre</span><span>Niños</span><span>Sale</span></div>
+                <div class="ec__icons">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span class="ec__cart"><i class="fa-solid fa-bag-shopping"></i></span>
+                </div>
+              </div>
+              <div class="ec__main">
+                <div class="ec__product">
+                  <span class="ec__product-badge">NUEVO</span>
+                  <div class="ec__product-img"></div>
+                </div>
+                <div class="ec__info">
+                  <h4 class="ec__info-name">Camiseta Cuban Soul — Talla M</h4>
+                  <div class="ec__info-meta">100% algodón orgánico · Envío gratis</div>
+                  <div class="ec__rating">★★★★★ <small>· 124 reseñas</small></div>
+                  <div class="ec__price-row"><span class="ec__price-now">$45</span><span class="ec__price-old">$60</span></div>
+                  <span class="ec__btn" role="presentation">+ Añadir al carrito</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__caption">
+            <span class="project__tag">E-commerce</span>
+            <h3 class="project__title">Tienda online completa</h3>
+            <p class="project__result">Vitrina 24/7 con cobros automáticos, stock en tiempo real y panel para gestionar todo.</p>
+          </div>
+        </article>
+
+        <!-- Chat IA -->
+        <article class="project fade-in" data-hover>
+          <div class="mockup">
+            <div class="mockup__chrome">
+              <div class="mockup__dots"><span></span><span></span><span></span></div>
+              <div class="mockup__url">chat.kairos-devs.cu/lucas</div>
+            </div>
+            <div class="chat">
+              <div class="chat__head">
+                <div class="chat__avatar"><i class="fa-solid fa-robot"></i></div>
+                <div>
+                  <div class="chat__name">LUCAS AI <span class="chat__status">En línea</span></div>
+                  <div class="chat__sub">Asistente virtual · Responde en segundos</div>
+                </div>
+              </div>
+              <div class="chat__msgs">
+                <div class="cht-msg cht-msg--bot">¡Hola Lucía! Soy Lucas, tu asistente. ¿En qué te ayudo hoy?</div>
+                <div class="cht-msg cht-msg--user">Quiero la camiseta Cuban Soul, talla M</div>
+                <div class="cht-msg cht-msg--bot">Te la aparto en 30 segundos. ¿Envío a La Habana o provincia?</div>
+                <div class="cht-msg cht-msg--typing"><span></span><span></span><span></span></div>
+              </div>
+              <div class="chat__input">
+                <span class="chat__placeholder">Escribe un mensaje…</span>
+                <span class="chat__send"><i class="fa-solid fa-paper-plane"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="project__caption">
+            <span class="project__tag">IA Conversacional</span>
+            <h3 class="project__title">Agente IA de atención</h3>
+            <p class="project__result">Responde, filtra y deriva consultas por ti. Ideal para WhatsApp, web y redes.</p>
+          </div>
+        </article>
+
+        <!-- Dashboard -->
+        <article class="project fade-in" data-hover>
+          <div class="mockup">
+            <div class="mockup__chrome">
+              <div class="mockup__dots"><span></span><span></span><span></span></div>
+              <div class="mockup__url">app.retailpulse.cu/dashboard</div>
+            </div>
+            <div class="dash">
+              <div class="dash__top">
+                <span class="dash__title">Ventas — Hoy</span>
+                <span class="dash__live">● EN VIVO</span>
+              </div>
+              <div class="dash__kpis">
+                <div class="kpi"><div class="kpi__l">REVENUE</div><div class="kpi__v">$8.4k</div><div class="kpi__t kpi__t--up">↑ 12.4%</div></div>
+                <div class="kpi"><div class="kpi__l">PEDIDOS</div><div class="kpi__v">142</div><div class="kpi__t kpi__t--up">↑ 8.1%</div></div>
+                <div class="kpi"><div class="kpi__l">CONV.</div><div class="kpi__v">3.8%</div><div class="kpi__t kpi__t--dn">↓ 0.2%</div></div>
+              </div>
+              <div class="dash__chart">
+                <div class="dash__chart-head">
+                  <span class="dash__chart-title">Últimas 24h</span>
+                  <span class="dash__chart-rang">00:00 — 23:59</span>
+                </div>
+                <div class="dash__bars">
+                  <span style="--h: 45%"></span><span style="--h: 65%"></span><span style="--h: 40%"></span><span style="--h: 80%"></span>
+                  <span style="--h: 55%"></span><span style="--h: 90%"></span><span style="--h: 70%"></span><span style="--h: 100%"></span>
+                  <span style="--h: 60%"></span><span style="--h: 75%"></span><span style="--h: 50%"></span><span style="--h: 85%"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__caption">
+            <span class="project__tag">Web App · Analytics</span>
+            <h3 class="project__title">Dashboard en tiempo real</h3>
+            <p class="project__result">Métricas claras de tu negocio: ventas, stock, KPIs. Tu equipo decide con datos, no con opiniones.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS DE ESTUDIO (resumen breve de los 6) -->
+  <section id="casos">
+    <div class="container">
+      <div class="section__head fade-in">
+        <p class="section__eyebrow">Cómo resolvemos</p>
+        <h2 class="section__title">Patrones típicos de dolor en PYMEs</h2>
+        <p class="section__sub">No son clientes: son los problemas universales que ya sabemos resolver.</p>
+      </div>
+
+      <div class="cases__grid">
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <span class="case__type">Inventario y Stock</span>
+          <h3 class="case__title">PYME sin control de inventario</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Stock en libretas y Excel. Pedidos rechazados por decir "tenemos" cuando ya no había.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Webapp con lector de código de barras y alertas automáticas de stock mínimo.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">Cada venta actualiza inventario. Compras de reposición dejan de ser reactivas.</p>
+          </div>
+        </article>
+
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-comments"></i></div>
+          <span class="case__type">Atención al Cliente</span>
+          <h3 class="case__title">Restaurante saturado por 3 canales</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Pedidos por WhatsApp, llamadas y mostrador. Cocina confundida, pedidos duplicados.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Agente IA centraliza los 3 canales en un panel. Cocina ve pedidos ordenados.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">Errores de cocina bajan. Clientes reciben respuesta inmediata en cualquier canal.</p>
+          </div>
+        </article>
+
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-coins"></i></div>
+          <span class="case__type">Finanzas y Control</span>
+          <h3 class="case__title">Empresa sin saber cuánto ganaba</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">20 proyectos activos, ingresos mezclados, Excel que solo entendía el dueño.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Sistema de gestión con proyectos, ingresos, gastos y dashboard de margen real.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">Identifica proyectos no rentables. Facturación automatizada.</p>
+          </div>
+        </article>
+
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-file-excel"></i></div>
+          <span class="case__type">Migración Excel → Sistema</span>
+          <h3 class="case__title">Excel que nadie se atreve a tocar</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Hoja gigante, fórmulas entrelazadas que solo entiende quien la creó.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Análisis, modelado y migración gradual a una webapp mantenible y versionada.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">El Excel antiguo queda como respaldo. El sistema nuevo es seguro y mobile-friendly.</p>
+          </div>
+        </article>
+
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-calculator"></i></div>
+          <span class="case__type">Contabilidad y Fiscalidad</span>
+          <h3 class="case__title">Contador cerrando el mes en 3 semanas</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Conciliación bancaria manual, facturas escaneadas, reportes con copiar-pegar.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Sistema contable a medida con extractos bancarios automáticos y facturas con serie fiscal.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">El cierre mensual pasó de 3 semanas a 2 días.</p>
+          </div>
+        </article>
+
+        <article class="case fade-in" data-hover>
+          <div class="case__icon"><i class="fa-solid fa-user-shield"></i></div>
+          <span class="case__type">App Interna</span>
+          <h3 class="case__title">Equipo con info desactualizada</h3>
+          <div class="case__step">
+            <div class="case__step-label">El problema</div>
+            <p class="case__step-text">Operarios consultaban datos en papel. Decisiones con info vieja de días.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">Cómo lo resolvimos</div>
+            <p class="case__step-text">Webapp interna con login, dashboards en tiempo real y alertas al móvil.</p>
+          </div>
+          <div class="case__step">
+            <div class="case__step-label">El resultado</div>
+            <p class="case__step-text">El equipo trabaja con la misma foto actual del negocio. Decisiones con info viva.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 20px;">
+    <div class="container">
+      <div class="hero__ctas" style="justify-content:center; display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="contacto.html" class="btn-primary" data-hover>Quiero construir algo así</a>
+        <a href="servicios.html" class="btn-ghost" data-hover>Ver servicios →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer__inner">
+      <div class="footer__logo">kairos-devs.cu</div>
+      <button class="footer__email" id="copyEmail" data-hover>
+        <i class="fa-regular fa-envelope"></i>
+        enmanuelmuletblanco@gmail.com
+        <small id="copyToast">¡Copiado al portapapeles!</small>
+      </button>
+      <div class="footer__social">
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> kairos-devs.cu · Hecho en Cuba 🇨🇺 con estándar global.</p>
+    </div>
+  </footer>
+
+  <div class="wa-float" id="wa-direct">
+    <div class="wa-float__tooltip">¿Hablamos por WhatsApp? 💬</div>
+    <a class="wa-float__btn" href="https://wa.me/5305146569?text=Hola%20%F0%9F%91%8B%20Vengo%20de%20kairos-devs.cu%20y%20quiero%20empezar%20un%20proyecto." target="_blank" rel="noopener" aria-label="Hablar por WhatsApp al +53 05146569" data-hover>
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="wa-float__badge" aria-hidden="true">En línea</span>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

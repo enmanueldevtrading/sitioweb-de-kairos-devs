@@ -1,0 +1,31 @@
+# ── Local dev server (Python http.server) ──
+*.log
+server.log
+temp_server.log
+
+# ── Stray Windows null-device file (artifact of a bad redirect) ──
+nul
+nul.txt
+
+# ── OS / editor junk ──
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Future-proofing (no se usan hoy, pero evita accidentes) ──
+node_modules/
+dist/
+build/
+.env
+.env.local
+.env.*.local
+
+# ── Backups temporales ──
+*.bak
+*.tmp
+*.orig
