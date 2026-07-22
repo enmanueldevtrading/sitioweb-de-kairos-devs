@@ -1,4 +1,4 @@
-# DEPLOY — kairos-devs.cu
+# DEPLOY — sitioweb-de-kairos-devs (proyecto)
 
 > **Para el desarrollador que recibe este proyecto.**
 > Esta es la guía práctica para llevarlo a producción en
@@ -20,7 +20,7 @@ git push origin main
 #       Root directory:    (vacío / raíz del repo)
 
 # 3) En Cloudflare → Workers & Pages → tu proyecto → Custom domains
-#    Agregar:  kairos-devs.cu  y  www.kairos-devs.cu
+#    Agregar:  sitioweb-de-kairos-devs (proyecto)  y  www.sitioweb-de-kairos-devs (proyecto)
 ```
 
 Listo. Cada `git push` a `main` redespliega automáticamente
@@ -31,9 +31,9 @@ Listo. Cada `git push` a `main` redespliega automáticamente
 ## 2. Pre-requisitos
 
 - **Cuenta GitHub** con acceso al repo
-  `https://github.com/enmanueldevtrading/kairos-devs.cu`.
+  `https://github.com/enmanueldevtrading/sitioweb-de-kairos-devs`.
 - **Cuenta Cloudflare** (free tier alcanza — no requiere tarjeta).
-- Dominio `kairos-devs.cu` accesible desde el panel DNS de Cloudflare
+- Dominio `sitioweb-de-kairos-devs (proyecto)` accesible desde el panel DNS de Cloudflare
   (o el registrador que uses).
 
 No necesitás:
@@ -63,7 +63,7 @@ No necesitás:
 
 ```bash
 # Una vez: configurar el remote con tu PAT (Personal Access Token)
-git remote set-url origin https://<TOKEN>@github.com/enmanueldevtrading/kairos-devs.cu.git
+git remote set-url origin https://<TOKEN>@github.com/enmanueldevtrading/sitioweb-de-kairos-devs.git
 
 # Cada deploy:
 git push origin main
@@ -77,7 +77,7 @@ ssh-keygen -t ed25519 -C "tu@email.com"          # si no tenés clave
 # Pegar el contenido de ~/.ssh/id_ed25519.pub en GitHub
 
 # El remote ya viene en SSH? Si no:
-git remote set-url origin git@github.com:enmanueldevtrading/kairos-devs.cu.git
+git remote set-url origin git@github.com:enmanueldevtrading/sitioweb-de-kairos-devs.git
 
 # Cada deploy:
 git push origin main
@@ -106,7 +106,7 @@ git push origin main           # push a GitHub
 1. **Cloudflare Dashboard** → **Workers & Pages** → **Create application**
 2. Pestaña **Pages** → **Connect to Git**
 3. Seleccioná **GitHub** → autorizá Cloudflare → elegí el repo
-   `enmanueldevtrading/kairos-devs.cu`
+   `enmanueldevtrading/sitioweb-de-kairos-devs`
 4. **Setup build and deployments**:
    - **Project name:** `kairos-devs` (o el que prefieras)
    - **Production branch:** `main`
@@ -120,9 +120,9 @@ git push origin main           # push a GitHub
 ### 5.2 Conectar dominio custom
 
 1. En el proyecto → **Custom domains** → **Set up a custom domain**
-2. Agregá `kairos-devs.cu` — Cloudflare intentará provisionar cert TLS
+2. Agregá `sitioweb-de-kairos-devs (proyecto)` — Cloudflare intentará provisionar cert TLS
    automáticamente (tarda ~5 min).
-3. Agregá también `www.kairos-devs.cu` (con redirect a apex o no).
+3. Agregá también `www.sitioweb-de-kairos-devs (proyecto)` (con redirect a apex o no).
 4. DNS en Cloudflare:
    - Si el dominio está en otro registrador (GoDaddy, Namecheap, etc.),
      apuntá los nameservers a Cloudflare (`zelda.ns.cloudflare.com`,
@@ -157,7 +157,7 @@ Cloudflare Pages permite headers personalizados en un archivo
 ## 6. Estructura del proyecto (cómo está organizado)
 
 ```
-kairos-devs.cu/
+sitioweb-de-kairos-devs (proyecto)/
 ├── index.html             Home (hero + tech marquee + 4 promesas + servicios + ventaja Cuba + CTA)
 ├── servicios.html         Catálogo de 9 servicios
 ├── nichos.html            6 nichos (odontólogos, estéticos, constructoras, tiendas, rest, locales)
@@ -223,7 +223,7 @@ Si llegás a 500 builds/mes (poco probable), pasate a Workers Paid ($5/mes).
 ## 9. Después del deploy — checklist
 
 - [ ] Verificá `https://kairos-devs.pages.dev` carga el sitio.
-- [ ] Verificá `https://kairos-devs.cu` carga con HTTPS (cert
+- [ ] Verificá `https://sitioweb-de-kairos-devs (proyecto)` carga con HTTPS (cert
   automático en Cloudflare toma ~5 min tras DNS).
 - [ ] Probá el form de contacto → debe abrir WhatsApp con los
   datos del cliente pre-armados.
@@ -281,7 +281,7 @@ Si llegás a 500 builds/mes (poco probable), pasate a Workers Paid ($5/mes).
 
 - **Marca y contenido:** Enmanuel Mulet Blanco
 - **Desarrollo y diseño:** kairos-devs (este sitio en sí es la muestra)
-- **Hosting target:** Cloudflare Pages + dominio `kairos-devs.cu`
+- **Hosting target:** Cloudflare Pages + dominio `sitioweb-de-kairos-devs (proyecto)`
 - **Última actualización de este doc:** 2026-07-22
 
 > **Recordá:** este `DEPLOY.md` es para vos. Modificalo cuando cambies
