@@ -1,24 +1,24 @@
 /*
-  Headers de seguridad para Cloudflare Pages
-  Aplican a TODO el sitio. Para headers específicos de una ruta, agregá un
-  bloque abajo con el path correspondiente.
+  Headers de seguridad para Cloudflare Pages.
+  Aplican a TODO el sitio.
 
-  ‒ HSTS sin "preload" (preload requiere sumisión manual y es irreversible
-    para años; mejor activarlo después de validar que TODO funciona en HTTPS).
-  ‒ CSP permisiva pero suficiente: scripts solo desde self + CDNJs (Three.js
-    si lo agregás), estilos self + Google Fonts + FontAwesome (con unsafe-inline
-    porque FontAwesome inyecta estilos).
-  ‒ Permissions-Policy cierra TODO por defecto (principio de menor privilegio).
+  Cambios vs versión anterior:
+  ‒ script-src ahora incluye unpkg.com (Lenis smooth scroll) y cdnjs.cloudflare.com.
+  ‒ font-src incluye cdnjs.cloudflare.com (FontAwesome), nope, fonts.gstatic.com.
+  ‒ img-src limpio: 'self' data: blob: (sin literales como 'hero-bg.jfif').
+  ‒ COEP pasa de require-corp → credentialless (más laxo, permite iframes
+    cross-origin sin pedir Cross-Origin-Resource-Policy).
+  ‒ HSTS sin "preload" (irreversible).
 */
 
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: same-origin
-  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
   Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: hero-bg.jfif; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Cross-Origin-Embedder-Policy: credentialless
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://unpkg.com https://*.unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 
 /*.svg
   Content-Type: image/svg+xml
