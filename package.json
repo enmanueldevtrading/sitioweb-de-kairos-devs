@@ -1,0 +1,24 @@
+{
+  "name": "kairos-devs",
+  "version": "1.0.0",
+  "description": "> **Transformamos tu caos en orden digital** — automatizaciones > inteligentes, aplicaciones a medida y webs que convierten. > Hecho en Cuba 🇨🇺 con estándar global.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enmanueldevtrading/sitioweb-de-kairos-devs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/enmanueldevtrading/sitioweb-de-kairos-devs/issues"
+  },
+  "homepage": "https://github.com/enmanueldevtrading/sitioweb-de-kairos-devs#readme",
+  "devDependencies": {
+    "wrangler": "^4.113.0"
+  }
+}

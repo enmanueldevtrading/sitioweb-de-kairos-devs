@@ -36,3 +36,10 @@ build/
 *.bak
 *.tmp
 *.orig
+
+# Wrangler / Cloudflare Pages
+node_modules/
+.wrangler/
+.cache/
+wrangler.toml
+
