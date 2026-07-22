@@ -1,14 +1,11 @@
 
-    /* =========================================================
-       VARIABLES Y RESET
-       ========================================================= */
     :root {
-      --bg: #0A0A0A;
-      --bg-corner: #0A0A2A;
+      --bg: #0A2540;
+      --bg-corner: #142A5C;
       --text: #F5F5F7;
-      --muted: #9CA3AF;
-      --accent: #00D4FF;
-      --accent-2: #635BFF;
+      --muted: #A8B5D1;
+      --accent: #635BFF;
+      --accent-2: #00D4FF;
       --accent-3: #FF6B6B;
       --wa: #25D366;
       --wa-dark: #128C7E;
@@ -26,11 +23,10 @@
       color: var(--text);
       background: var(--bg);
       overflow-x: hidden;
-      cursor: none; /* El cursor personalizado reemplaza al nativo */
+      cursor: none;
       min-height: 100vh;
     }
 
-    /* Fondo con degradado sutil en esquinas */
     body::before {
       content: "";
       position: fixed; inset: 0;
@@ -45,11 +41,6 @@
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: none; }
 
-    /* =========================================================
-       SCROLL PROGRESS BAR (NUEVO)
-       Barra fija de 2px en el borde superior de la pantalla.
-       Se llena con el scroll para dar contexto al usuario.
-       ========================================================= */
     .scroll-progress {
       position: fixed;
       top: 0; left: 0;
@@ -62,9 +53,6 @@
       pointer-events: none;
     }
 
-    /* =========================================================
-       NAV / HEADER
-       ========================================================= */
     .nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 50;
@@ -92,7 +80,7 @@
       position: relative;
       padding-bottom: 4px;
     }
-    /* Active section highlight (NUEVO) */
+
     .nav__links a::after {
       content: "";
       position: absolute;
@@ -119,9 +107,6 @@
     }
     .nav__burger { display: none; background: none; border: 0; color: var(--text); font-size: 1.3rem; }
 
-    /* =========================================================
-       CURSOR PERSONALIZADO
-       ========================================================= */
     .cursor-dot, .cursor-ring {
       position: fixed; top: 0; left: 0;
       pointer-events: none;
@@ -133,7 +118,7 @@
       border: 2px solid var(--accent);
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      transition: width .25s ease, height .25s ease, border-color .25s ease, background .25s ease;
+      transition: border-color .2s ease, background .2s ease;
     }
     .cursor-dot {
       width: 6px; height: 6px;
@@ -142,14 +127,11 @@
       transform: translate(-50%, -50%);
     }
     .cursor-ring.is-hover {
-      width: 50px; height: 50px;
-      background: rgba(0, 212, 255, 0.12);
-      border-color: var(--accent);
+      /* Sin resize — sólo cambio de color/borde, el cursor no se siente pesado */
+      background: rgba(0, 212, 255, 0.16);
+      border-color: var(--accent-2);
     }
 
-    /* =========================================================
-       LOADER
-       ========================================================= */
     .loader {
       position: fixed; inset: 0;
       background: var(--bg);
@@ -173,9 +155,6 @@
       letter-spacing: .08em;
     }
 
-    /* =========================================================
-       HERO
-       ========================================================= */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -227,7 +206,6 @@
     }
     .hero__ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-    /* Botón primario con ripple */
     .btn-primary {
       position: relative;
       overflow: hidden;
@@ -275,9 +253,6 @@
     }
     .hero__microcopy strong { color: var(--accent); font-weight: 600; }
 
-    /* =========================================================
-       SECCIONES GENERALES
-       ========================================================= */
     section { position: relative; z-index: 2; padding: 100px 24px; }
     .container { max-width: var(--max-w); margin: 0 auto; }
     .section__head { text-align: center; margin-bottom: 60px; }
@@ -302,11 +277,6 @@
       line-height: 1.55;
     }
 
-    /* =========================================================
-       TECH MARQUEE (NUEVO)
-       Tira horizontal infinita que muestra el stack que dominamos.
-       Genera credibilidad B2B inmediata (estilo Stripe).
-       ========================================================= */
     .tech-marquee {
       padding: 60px 24px;
       position: relative;
@@ -328,7 +298,7 @@
       position: relative;
       max-width: 100%;
       overflow: hidden;
-      /* Fade en los bordes para suavizar */
+
       mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     }
@@ -349,11 +319,6 @@
     .tech-marquee__item i { font-size: 1.6rem; }
     .tech-marquee__item:hover { color: var(--accent); }
 
-    /* =========================================================
-       PROMESAS (sustituye a los antiguos STATS con números falsos)
-       4 tarjetas honestas sobre CÓMO trabajamos, no cifras inventadas
-       de lo que supuestamente hemos entregado.
-       ========================================================= */
     .stats {
       position: relative; z-index: 2;
       padding: 80px 24px;
@@ -369,7 +334,7 @@
     }
     .promise__card {
       padding: 28px 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      background: linear-gradient(180deg, rgba(20, 32, 52, .78), rgba(15, 25, 45, .85));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       text-align: center;
@@ -401,9 +366,6 @@
       line-height: 1.5;
     }
 
-    /* =========================================================
-       SERVICIOS (9 TARJETAS — grid 3 columnas para mejor lectura)
-       ========================================================= */
     .services__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -412,7 +374,7 @@
     .service-card {
       position: relative;
       padding: 28px 22px 26px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      background: linear-gradient(180deg, rgba(20, 32, 52, .78), rgba(15, 25, 45, .85));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
@@ -464,11 +426,6 @@
       line-height: 1.55;
     }
 
-    /* =========================================================
-       SOBRE NOSOTROS / EL EQUIPO (NUEVO)
-       Enmanuel como cabeza + 3 roles anónimos del equipo.
-       Sin nombres falsos: solo roles claramente identificables.
-       ========================================================= */
     .team {
       display: grid;
       grid-template-columns: 1.05fr 1fr;
@@ -545,7 +502,7 @@
     }
     .team__role-card {
       padding: 22px 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      background: linear-gradient(180deg, rgba(20, 32, 52, .78), rgba(15, 25, 45, .85));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       display: flex; align-items: center; gap: 16px;
@@ -576,12 +533,6 @@
       line-height: 1.4;
     }
 
-    /* =========================================================
-       CASOS DE ESTUDIO (NUEVO)
-       3 walkthroughs genéricos con formato:
-       El problema → Cómo lo resolvimos → El resultado.
-       Sin nombres ni clientes específicos.
-       ========================================================= */
     .cases__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -589,7 +540,7 @@
     }
     .case {
       padding: 28px 24px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      background: linear-gradient(180deg, rgba(20, 32, 52, .78), rgba(15, 25, 45, .85));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       display: flex; flex-direction: column;
@@ -701,12 +652,6 @@
       opacity: 1; transform: translateY(0);
     }
 
-    /* =========================================================
-       PORTAFOLIO — MOCKUPS REALES (MINI-UIS)
-       Cada mockup es una "captura" de producto: chrome bar arriba y
-       dentro una mini-UI distinta estilo Shopify / ChatGPT / Stripe.
-       Debajo del mockup, un caption con tag + título + resultado real.
-       ========================================================= */
     .portfolio__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -758,7 +703,6 @@
       font-weight: 500;
     }
 
-    /* Caption debajo del mockup */
     .project__caption { text-align: left; }
     .project__tag {
       display: inline-block;
@@ -794,9 +738,6 @@
       border-color: rgba(0,212,255,.35);
     }
 
-    /* =========================================================
-       E-COMMERCE MINI-UI (tienda "AURORA")
-       ========================================================= */
     .ec {
       flex: 1;
       display: flex; flex-direction: column;
@@ -874,7 +815,7 @@
       border-radius: 8px;
       margin: 0;
       filter: drop-shadow(0 6px 14px rgba(0,212,255,.4));
-      /* Simula una prenda (silueta camiseta) */
+
       clip-path: polygon(50% 6%, 78% 24%, 92% 60%, 75% 96%, 25% 96%, 8% 60%, 22% 24%);
       -webkit-clip-path: polygon(50% 6%, 78% 24%, 92% 60%, 75% 96%, 25% 96%, 8% 60%, 22% 24%);
     }
@@ -912,13 +853,10 @@
       border: none;
       box-shadow: 0 4px 12px rgba(0,212,255,.3);
       display: block;
-      pointer-events: none; /* Decorativo: no confundir al usuario */
+      pointer-events: none;
       user-select: none;
     }
 
-    /* =========================================================
-       AI CHAT MINI-UI
-       ========================================================= */
     .chat {
       flex: 1;
       display: flex; flex-direction: column;
@@ -1032,9 +970,6 @@
       flex-shrink: 0;
     }
 
-    /* =========================================================
-       DASHBOARD MINI-UI
-       ========================================================= */
     .dash {
       flex: 1;
       display: flex; flex-direction: column;
@@ -1128,14 +1063,6 @@
       50%      { box-shadow: 0 -2px 18px rgba(0,212,255,.9); }
     }
 
-    /* (Sección TESTIMONIOS eliminada a pedido del cliente.
-       Las clases .testimonial* huérfanas se removieron del CSS.) */
-
-    /* =========================================================
-       FAQ — ACORDEÓN (NUEVO)
-       Usa <details>/<summary> nativos, cero JS de acordeón.
-       Maneja objeciones frecuentes antes de la conversión.
-       ========================================================= */
     .faq__list {
       max-width: 820px;
       margin: 0 auto;
@@ -1144,7 +1071,7 @@
       gap: 14px;
     }
     .faq__item {
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      background: linear-gradient(180deg, rgba(20, 32, 52, .78), rgba(15, 25, 45, .85));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       transition: border-color .25s ease, background .25s ease;
@@ -1165,7 +1092,7 @@
     }
     .faq__summary::-webkit-details-marker { display: none; }
     .faq__summary::after {
-      content: "\f078"; /* fa-chevron-down */
+      content: "\f078";
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
       color: var(--accent);
@@ -1181,10 +1108,6 @@
       animation: fadeUp .4s ease;
     }
 
-    /* =========================================================
-       VENTAJA CUBA (NUEVO)
-       Diferenciador único: convierte la geografía en ventaja.
-       ========================================================= */
     .ventaja {
       position: relative; z-index: 2;
       padding: 100px 24px;
@@ -1200,7 +1123,7 @@
     }
     .ventaja__card {
       padding: 32px 26px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      background: linear-gradient(180deg, rgba(20, 32, 52, .78), rgba(15, 25, 45, .85));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       text-align: center;
@@ -1230,11 +1153,6 @@
       line-height: 1.55;
     }
 
-    /* =========================================================
-       CONTACTO — FORMULARIO INLINE (NUEVO)
-       2 columnas: izquierda copy+WhatsApp, derecha form.
-       El form rutea la info via WhatsApp al submit.
-       ========================================================= */
     .contact {
       position: relative; z-index: 2;
       padding: 100px 24px;
@@ -1301,9 +1219,44 @@
       box-shadow: 0 16px 40px rgba(37,211,102,.55);
     }
 
+    /* CTA secundaria grande: WhatsApp directo sin llenar formulario */
+    .contact__wa-direct {
+      margin: 24px 0 6px;
+      display: block;
+    }
+    .contact__wa-btn {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 22px;
+      background: var(--wa);
+      color: #fff;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      box-shadow: 0 10px 30px rgba(37,211,102,.3);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .contact__wa-btn:hover {
+      transform: translateY(-2px);
+      background: var(--wa-dark);
+      box-shadow: 0 18px 45px rgba(37,211,102,.55);
+    }
+    .contact__wa-btn i { font-size: 1.7rem; flex-shrink: 0; }
+    .contact__wa-btn span { display: flex; flex-direction: column; gap: 2px; }
+    .contact__wa-btn strong { font-size: 1.05rem; font-weight: 700; }
+    .contact__wa-btn small {
+      font-size: .82rem;
+      color: rgba(255,255,255,.82);
+      font-weight: 400;
+    }
+    .contact__wa-btn:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+
     .form {
       padding: 32px;
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+      background: linear-gradient(180deg, rgba(20, 32, 52, .82), rgba(15, 25, 45, .88));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       backdrop-filter: blur(4px);
@@ -1359,11 +1312,6 @@
     }
     .form.is-sent .form__success { display: block; }
 
-    /* =========================================================
-       BLOQUE REDES SOCIALES (en sección contacto)
-       4 botones grandes con íconos e identidad de marca,
-       sin href hasta que el cliente provea los enlaces.
-       ========================================================= */
     .socials {
       max-width: var(--max-w);
       margin: 60px auto 0;
@@ -1405,14 +1353,7 @@
     .social-btn--ig:hover { background: rgba(225,48,108,.12); border-color: #E1306C; }
     .social-btn--tg { color: #2AABEE; border-color: rgba(42,171,238,.3); }
     .social-btn--tg:hover { background: rgba(42,171,238,.12); border-color: #2AABEE; }
-    /* =========================================================
-       NICHOS (nueva sección informativa): habla el idioma del dueño del negocio.
-       Spec visual: Título con gradient animado cyan→purple,
-       problema en card #1A1A2E con borde rojo #FF4444,
-       solución en bubble cyan con texto oscuro,
-       beneficios 4-col con check cyan,
-       6 nichos en grid 3-col fondo #1A1A2E con borde cyan en hover.
-       ========================================================= */
+
     .nichos__intro {
       max-width: 920px;
       margin: 0 auto 40px;
@@ -1464,7 +1405,7 @@
     }
     .benefit-card {
       padding: 26px 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      background: linear-gradient(180deg, rgba(20, 32, 52, .78), rgba(15, 25, 45, .85));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       text-align: center;
@@ -1604,24 +1545,21 @@
     }
     .socials__hint i { color: var(--accent); }
 
-    /* =========================================================
-       FOOTER
-       ========================================================= */
     footer {
       position: relative; z-index: 2;
-      padding: 60px 24px 40px;
+      padding: 32px 24px 26px;
       background: var(--bg);
       border-top: 1px solid var(--accent);
     }
     .footer__inner {
       max-width: var(--max-w);
       margin: 0 auto;
-      display: flex; flex-direction: column; align-items: center; gap: 24px;
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
       text-align: center;
     }
     .footer__logo {
       font-weight: 800;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.25rem, 2.6vw, 1.6rem);
       letter-spacing: -0.02em;
       background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
       background-size: 200% 200%;
@@ -1629,15 +1567,16 @@
       background-clip: text;
       color: transparent;
       animation: gradientShift 6s ease infinite;
+      margin-bottom: 2px;
     }
     .footer__email {
       position: relative;
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 12px 20px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px;
       background: rgba(255,255,255,.04);
       border: 1px solid var(--border);
       border-radius: 999px;
-      font-size: 1rem;
+      font-size: .88rem;
       color: var(--text);
       transition: all .25s ease;
     }
@@ -1657,32 +1596,32 @@
       white-space: nowrap;
     }
     .footer__email.is-copied small { opacity: 1; bottom: 120%; }
-    .footer__social { display: flex; gap: 14px; }
+    .footer__social { display: flex; gap: 12px; }
     .footer__social a {
-      width: 42px; height: 42px;
+      width: 36px; height: 36px;
       display: grid; place-items: center;
       border-radius: 50%;
       background: rgba(255,255,255,.04);
-      border: 1px solid var(--border);
-      color: var(--muted);
+      border: 1px solid rgba(255,255,255,.1);
+      color: rgba(168, 181, 209, .85);
+      font-size: .92rem;
       transition: all .25s ease;
     }
     .footer__social a:hover {
       color: var(--accent);
       border-color: var(--accent);
-      transform: translateY(-3px);
+      background: rgba(0,212,255,.1);
+    }
+    .footer__social a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
     .footer__copy {
-      font-size: .78rem;
+      font-size: .72rem;
       color: var(--muted);
-      margin-top: 8px;
+      margin-top: 4px;
     }
 
-    /* =========================================================
-       BOTÓN FLOTANTE DE WHATSAPP
-       Posición fija bottom-right. Color oficial.
-       Pulso sutil, tooltip persuasivo, mensaje pre-armado.
-       ========================================================= */
     .wa-float {
       position: fixed;
       right: 22px; bottom: 22px;
@@ -1763,9 +1702,6 @@
     @keyframes badgeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
 
-    /* =========================================================
-       ANIMACIONES
-       ========================================================= */
     @keyframes gradientShift {
       0%   { background-position: 0% 50%; }
       50%  { background-position: 100% 50%; }
@@ -1783,7 +1719,7 @@
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    /* Marquee infinito (NUEVO) */
+
     @keyframes marquee {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
@@ -1791,36 +1727,31 @@
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
     .fade-in.is-visible { opacity: 1; transform: translateY(0); }
 
-    /* Accesibilidad: respetar reduced motion */
     @media (prefers-reduced-motion: reduce) {
       * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
       html { scroll-behavior: auto; }
       .tech-marquee__track { animation: none !important; }
     }
 
-    /* Ocultar cursor personalizado en dispositivos táctiles */
     @media (hover: none), (pointer: coarse) {
       .cursor-dot, .cursor-ring { display: none !important; }
       body, button, a { cursor: auto !important; }
     }
 
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
     @media (max-width: 980px) {
       .services__grid { grid-template-columns: repeat(2, 1fr); }
       .portfolio__grid { grid-template-columns: 1fr; }
       .process__grid { grid-template-columns: 1fr; gap: 50px; }
       .process__grid::before { display: none; }
-      /* Promesas: 2 columnas en tablet para que las cards no queden cramped */
+
       .promise { grid-template-columns: repeat(2, 1fr); gap: 18px; }
       .ventaja__grid { grid-template-columns: 1fr; }
       .contact__grid { grid-template-columns: 1fr; gap: 40px; }
-      /* Equipo: 2-col → 1-col en tablet (Enmanuel full-width arriba, roles abajo) */
+
       .team { grid-template-columns: 1fr; }
-      /* Casos: 3-col → 1-col en mobile para que se lean bien */
+
       .cases__grid { grid-template-columns: 1fr; }
-      /* Nichos: benefits 4-col → 2-col; grid → 1-col */
+
       .nichos__benefits { grid-template-columns: repeat(2, 1fr); }
       .nichos__grid { grid-template-columns: 1fr; }
     }
@@ -1843,14 +1774,14 @@
       .wa-float__tooltip { display: none; }
       .wa-float__btn { width: 56px; height: 56px; }
       .hero { padding: 100px 20px 60px; }
-      /* Promesas: 1 columna en móvil */
+
       .promise { grid-template-columns: 1fr; gap: 14px; }
       .tech-marquee { padding: 40px 0; }
       .form { padding: 24px; }
-      /* Nichos: benefits → 1-col en móvil */
+
       .nichos__benefits { grid-template-columns: 1fr; }
     }
-    /* Mobile pequeño (~ 360-480px) — ajustes finos */
+
     @media (max-width: 480px) {
       .nav { padding: 14px 18px; }
       .hero__title { font-size: 2.2rem; }
@@ -1863,21 +1794,18 @@
       .social-btn { padding: 11px 16px; font-size: .85rem; gap: 8px; }
       .form__input, .form__textarea { padding: 11px 12px; font-size: .9rem; }
     }
-    /* Laptop chico (1024-1280px) */
+
     @media (max-width: 1280px) and (min-width: 981px) {
       .container { max-width: 100%; padding: 0 32px; }
       .hero__title { font-size: clamp(2.4rem, 4.5vw, 4rem); }
     }
-    /* Landscape móvil (altura baja) */
+
     @media (max-height: 500px) and (orientation: landscape) {
       .hero { min-height: 80vh; padding: 80px 24px 40px; }
       #hero-canvas { opacity: .55; }
       .section__head { margin-bottom: 32px; }
     }
 
-    /* =========================================================
-       PAGE-HERO (hero más pequeño para sub-páginas)
-       ========================================================= */
     .page-hero {
       position: relative;
       min-height: 50vh;
@@ -1898,7 +1826,6 @@
       margin-bottom: 30px;
     }
 
-    /* Print (PDFs / búsquedas offline) */
     @media print {
       body::before, .scroll-progress, .wa-float, .cursor-dot, .cursor-ring,
       .loader, .nav__burger, #hero-canvas { display: none !important; }
@@ -1906,4 +1833,263 @@
       a { text-decoration: underline; color: blue; }
       section { padding: 20px; page-break-inside: avoid; }
     }
-  
+
+.final-cta {
+  padding: 80px 0 60px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.10), transparent 60%),
+              radial-gradient(circle at 50% 100%, rgba(99, 91, 255, 0.08), transparent 60%);
+}
+.final-cta__inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.final-cta .section__title { margin-bottom: 14px; }
+.final-cta .section__sub { color: var(--text); margin-bottom: 28px; }
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  padding: 18px 0 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 14px;
+}
+.footer__nav a {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer__nav a:hover {
+  color: var(--accent);
+}
+
+.process-step__list {
+  list-style: none;
+  padding: 0;
+  margin-top: 14px;
+}
+.process-step__list li {
+  padding: 4px 0 4px 22px;
+  position: relative;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.process-step__list li::before {
+  content: "\2192";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ============================================================
+   V2 KAIROS PREMIUM UI
+   glassmorphism, glow premium buttons, footer terminal,
+   live code editor, animated background, prefers-reduced-motion
+   ============================================================ */
+
+/* Animated gradient mesh background (sutil, no plano) */
+.bg-mesh {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(900px 600px at 0% 0%, rgba(0, 212, 255, 0.10), transparent 60%),
+    radial-gradient(900px 600px at 100% 100%, rgba(99, 91, 255, 0.10), transparent 60%),
+    radial-gradient(700px 500px at 50% 50%, rgba(255, 107, 107, 0.04), transparent 70%);
+  animation: bgMeshDrift 30s ease-in-out infinite alternate;
+}
+@keyframes bgMeshDrift {
+  from { background-position: 0% 0%, 100% 100%, 50% 50%; }
+  to   { background-position: 30% 40%, 70% 60%, 60% 40%; }
+}
+
+/* Background floating glow circles (3 capas) */
+.bg-glow-light {
+  position: fixed; width: 360px; height: 360px; border-radius: 50%;
+  filter: blur(70px); opacity: 0.45; pointer-events: none;
+  will-change: transform; z-index: -1;
+}
+.bg-glow-light--cyan   { background: rgba(0, 212, 255, 0.35);  top: 8%;  left: -120px; animation: glowFloatA 18s ease-in-out infinite alternate; }
+.bg-glow-light--indigo { background: rgba(99, 91, 255, 0.40);  bottom: 18%; right: -120px; animation: glowFloatB 22s ease-in-out infinite alternate; }
+.bg-glow-light--violet { background: rgba(180, 100, 255, 0.28); top: 55%; left: 35%;  animation: glowFloatC 26s ease-in-out infinite alternate; }
+@keyframes glowFloatA { from { transform: translate3d(0,0,0);   } to { transform: translate3d(80px, 60px, 0); } }
+@keyframes glowFloatB { from { transform: translate3d(0,0,0);   } to { transform: translate3d(-90px, -50px, 0); } }
+@keyframes glowFloatC { from { transform: translate3d(0,0,0);   } to { transform: translate3d(60px, -80px, 0); } }
+
+/* Glassmorphism panel utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 20px 60px rgba(0, 10, 30, 0.50);
+}
+
+/* Glow utility */
+.glow-cyan   { box-shadow: 0 0 24px rgba(0, 212, 255, 0.45), 0 0 60px rgba(0, 212, 255, 0.15); }
+.glow-indigo { box-shadow: 0 0 24px rgba(99, 91, 255, 0.50), 0 0 60px rgba(99, 91, 255, 0.18); }
+.glow-violet { box-shadow: 0 0 24px rgba(180, 100, 255, 0.45), 0 0 60px rgba(180, 100, 255, 0.12); }
+
+/* Premium buttons (sheen sweep + magnetic feel via JS) */
+.btn-primary,
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #061522;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 8px 24px rgba(99, 91, 255, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.30);
+  transform: translate3d(0,0,0);
+  transition: transform 0.30s cubic-bezier(0.20, 0.80, 0.30, 1), box-shadow 0.30s ease;
+  isolation: isolate;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform, box-shadow;
+}
+.btn-primary::before,
+.btn-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.45) 40%, transparent 75%);
+  transform: translateX(-110%);
+  transition: transform 0.65s cubic-bezier(0.20, 0.80, 0.30, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+.btn-primary:hover,
+.btn-premium:hover {
+  transform: translate3d(0, -2px, 0) scale(1.02);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 16px 40px rgba(99, 91, 255, 0.55),
+    0 4px 10px rgba(0, 0, 0, 0.40);
+}
+.btn-primary:hover::before,
+.btn-premium:hover::before { transform: translateX(110%); }
+.btn-primary:active,
+.btn-premium:active { transform: translate3d(0,0,0) scale(0.98); }
+
+/* Premium typography hierarchy */
+.hero__title {
+  font-weight: 800;
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  background: linear-gradient(120deg, var(--text) 0%, var(--accent) 60%, var(--accent-2) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: heroGradient 8s ease-in-out infinite;
+  text-shadow: 0 0 80px rgba(99, 91, 255, 0.10);
+}
+@keyframes heroGradient { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.section__title {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  line-height: 1.12;
+}
+
+/* Footer terminal (PowerShell-like) */
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 37, 64, 0.62), rgba(10, 37, 64, 0.92)),
+    radial-gradient(900px 600px at 75% 50%, rgba(99, 91, 255, 0.20), transparent 60%);
+  display: flex; flex-direction: column;
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  font-size: 13px; color: #d6deff;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.92;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 11.5px;
+}
+  margin-left: 14px; padding: 4px 12px;
+  background: rgba(99, 91, 255, 0.22);
+  border-radius: 5px;
+  color: var(--text); font-weight: 600;
+  border-top: 2px solid var(--accent);
+}
+  margin-left: auto; opacity: 0.65; font-size: 11px;
+  padding: 2px 8px; border-radius: 3px;
+  background: rgba(255, 255, 255, 0.04);
+
+/* V2 mobile hardening (added 2026-07-22 after sprint) */
+  }
+@media (max-width: 768px) {
+  .bg-mesh { animation: none; }
+  .btn-primary:hover, .btn-premium:hover { transform: none; }
+  .bg-glow-light { display: none; }
+  .bg-mesh { background-attachment: fixed; }
+}
+
+/* Accesibilidad: usuarios con prefers-reduced-motion ven cursor nativo y sin custom cursor */
+@media (prefers-reduced-motion: reduce) {
+  body, button { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+  .fade-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .code-bg { animation: none !important; }
+}
+
+
+/* ============================================================
+   V4 · FONDO ESTÁTICO CON IMAGEN (hero-bg.jfif)
+   Imagen nítida y pesada, pero tratada para ser puro ambiente:
+   blur fuerte + brillo bajo + saturación baja + opacity baja.
+   La capa body::before refuerza con un degradado radial navy.
+   ============================================================ */
+.code-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* fallback navy: si la imagen tarda o falla, no aparece fondo blanco */
+  background-color: #0A2540;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(10, 37, 64, 0.22) 0%, transparent 65%),
+    url('hero-bg.jfif');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat;
+  filter: blur(4px) brightness(0.95) saturate(1);
+  opacity: 0.96;
+  transform: translateZ(0);
+}
+/* Sin @keyframes: el fondo es est\u00e1tico, sin movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+  .code-bg {
+    filter: blur(10px) brightness(0.65) saturate(0.75) !important;
+    opacity: 0.7 !important;
+  }
+}
+
+/* Mobile: coherencia con desktop, blur suave para ambient sin caer perf. */
+@media (max-width: 768px) {
+  .code-bg {
+    filter: blur(3px) saturate(0.85);
+    opacity: 0.8;
+  }
+}

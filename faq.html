@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<script>window.onerror=function(m,s,l){return true;};window.onunhandledrejection=function(e){return true;};</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0A0A0A" />
@@ -17,6 +18,8 @@
   <meta property="og:description" content="Respuestas sobre precios, plazos, soporte, SEO, pagos y migración. Cuba 🇨🇺" />
   <meta property="og:url" content="https://kairos-devs.cu/faq.html" />
   <meta property="og:image" content="https://kairos-devs.cu/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="es_CU" />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -47,8 +50,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="styles.css?v=19" as="style" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" as="style" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script src="script.js?v=19" defer></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -66,8 +74,11 @@
     <div class="nav__links">
       <a href="index.html" data-hover>Inicio</a>
       <a href="servicios.html" data-hover>Servicios</a>
+      <a href="nichos.html" data-hover>Nichos</a>
       <a href="portafolio.html" data-hover>Portafolio</a>
-      <a href="faq.html" class="is-active" data-hover>FAQ</a>
+      <a href="nosotros.html" data-hover>Nosotros</a>
+      <a href="proceso.html" data-hover>Proceso</a>
+      <a href="faq.html" class="is-active" aria-current="page" data-hover>FAQ</a>
       <a href="contacto.html" data-hover>Contacto</a>
     </div>
     <a href="contacto.html" class="nav__cta" data-hover>Hablemos 🚀</a>
@@ -122,22 +133,26 @@
     </div>
   </section>
 
-  <footer>
+  <footer class="footer">
     <div class="footer__inner">
       <div class="footer__logo">kairos-devs.cu</div>
+
+
       <button class="footer__email" id="copyEmail" data-hover>
         <i class="fa-regular fa-envelope"></i>
         enmanuelmuletblanco@gmail.com
         <small id="copyToast">¡Copiado al portapapeles!</small>
       </button>
+
       <div class="footer__social">
-        <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://wa.me/5305146569?text=Hola%20%F0%9F%91%8B%20Vengo%20de%20kairos-devs.cu%20y%20quiero%20empezar%20un%20proyecto." class="footer__social-btn" target="_blank" rel="noopener" data-hover aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
         <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         <a href="#" class="footer__social-btn" data-social-soon data-hover aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
+
       <p class="footer__copy">© <span id="year"></span> kairos-devs.cu · Hecho en Cuba 🇨🇺 con estándar global.</p>
     </div>
   </footer>
@@ -150,6 +165,6 @@
     </a>
   </div>
 
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,175 @@
+Has cometido un error de interpretación del diseño.
+
+NO quiero un editor VS Code ocupando espacio en la página.
+
+NO quiero una caja de código en una esquina.
+
+NO quiero que el código sea un elemento principal.
+
+El código animado debe ser ÚNICAMENTE UN FONDO DECORATIVO, detrás del contenido.
+
+El usuario debe ver primero:
+
+Títulos.
+Descripción.
+Botones.
+Servicios.
+Llamadas a acción.
+
+El código solamente debe aportar ambiente tecnológico.
+
+Fondo de código estilo ambiente tecnológico
+
+Crear un fondo inspirado en un editor de código, pero extremadamente ligero.
+
+Debe parecer que detrás de la página existe un entorno de desarrollo funcionando.
+
+Características:
+
+Código desenfocado.
+Movimiento lento.
+Escritura automática ocasional.
+Cursor sutil.
+Líneas de código flotando.
+Partículas pequeñas.
+Glow tecnológico.
+
+NO debe parecer un bloque de texto leyendo código.
+
+Opacidad y colores EXACTOS
+
+Usa la paleta existente del proyecto:
+
+Fondo principal:
+
+#0A2540
+
+Texto principal:
+
+#F5F5F7
+
+Texto secundario:
+
+#A8B5D1
+
+Acento:
+
+#635BFF
+
+Cyan:
+
+#00D4FF
+
+El código del fondo debe tener:
+
+Código azul/cyan:
+
+rgba(0,212,255,0.12)
+
+Código violeta:
+
+rgba(99,91,255,0.10)
+
+Texto secundario:
+
+rgba(245,245,247,0.08)
+
+Nunca superar:
+
+opacity: 0.15
+Posición del fondo
+
+Debe estar:
+
+Absolutamente detrás del contenido.
+position:absolute.
+z-index menor que el contenido.
+No ocupar espacio del layout.
+No modificar tamaños de secciones.
+
+Ejemplo:
+
+.hero-background {
+ position:absolute;
+ inset:0;
+ z-index:0;
+ pointer-events:none;
+ opacity:0.12;
+}
+
+.hero-content {
+ position:relative;
+ z-index:2;
+}
+Blur obligatorio
+
+Aplicar profundidad:
+
+filter: blur(3px);
+
+En algunas zonas:
+
+filter: blur(8px);
+
+El usuario debe percibir:
+
+"hay código detrás"
+
+NO:
+
+"estoy leyendo código".
+
+Movimiento
+
+La animación debe ser muy lenta:
+
+Movimiento vertical: 20-40px.
+Duración: 20-40 segundos.
+Movimiento continuo.
+Sin saltos.
+
+Ejemplo:
+
+animation:
+floatCode 30s linear infinite;
+Nunca hacer esto:
+
+❌ Crear una ventana VS Code gigante.
+
+❌ Poner código al lado del hero.
+
+❌ Cubrir textos.
+
+❌ Añadir cientos de líneas de texto.
+
+❌ Crear un canvas pesado que afecte la carga.
+
+❌ Romper el rendimiento.
+
+Rendimiento
+
+El sitio actualmente es estático y optimizado. Mantener esa filosofía.
+
+No agregar librerías pesadas innecesarias.
+
+Usar solamente:
+
+CSS animations.
+Canvas ligero si es necesario.
+Three.js existente únicamente en hero.
+
+No aumentar el tiempo de carga.
+
+Resultado esperado
+
+Debe sentirse como:
+
+Un desarrollador está programando una aplicación detrás de la página.
+
+Pero el visitante solamente ve:
+
+"una página tecnológica premium con un fondo vivo".
+
+El contenido siempre debe ganar la atención.
+
+Además dile que antes de modificar haga una auditoría del DOM y CSS actual, porque ya tienes el sistema de diseño definido y tocar estructuras puede romper tiempos de carga y estilos existentes.

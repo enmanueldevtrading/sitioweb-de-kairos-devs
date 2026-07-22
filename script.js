@@ -1,329 +1,267 @@
-    // ============ LOADER ============
-    const hideLoader = () => document.getElementById('loader')?.classList.add('is-hidden');
-    window.addEventListener('load', () => setTimeout(hideLoader, 400));
-    setTimeout(hideLoader, 4000); // fallback duro
+/* ============================================================
+   kairos-devs.cu · script.js (V2 limpio y defensivo)
+   ============================================================ */
+(function () {
+  if (typeof window === 'undefined') return;
 
-    // ============ CURSOR PERSONALIZADO ============
-    const cursorRing = document.getElementById('cursorRing');
-    const cursorDot  = document.getElementById('cursorDot');
-    let mx = 0, my = 0, rx = 0, ry = 0;
+  // ===== HARD ERROR SUPPRESSOR =====
+  // MDN spec: window.onerror returning true suprime display en consola.
+  window.onerror = function (msg, src, line) {
+    try { console.warn('[Kairos onerror]', src || 'inline', 'L' + (line || '?') + ':', msg); } catch (_) {}
+    return true;
+  };
+  window.onunhandledrejection = function (e) {
+    try { console.warn('[Kairos rejection]', e && e.reason); } catch (_) {}
+    return true;
+  };
 
-    document.addEventListener('mousemove', (e) => {
-      mx = e.clientX; my = e.clientY;
-      cursorDot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-    });
+  // ===== LOADER =====
+  function hideLoader() {
+    var l = document.getElementById('loader');
+    if (l && l.classList) l.classList.add('is-hidden');
+  }
+  window.addEventListener('load', function () { setTimeout(hideLoader, 200); });
+  setTimeout(hideLoader, 1000);
 
-    function animateCursor() {
-      rx += (mx - rx) * 0.15;
-      ry += (my - ry) * 0.15;
-      cursorRing.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    document.querySelectorAll('[data-hover]').forEach(el => {
-      el.addEventListener('mouseenter', () => cursorRing.classList.add('is-hover'));
-      el.addEventListener('mouseleave', () => cursorRing.classList.remove('is-hover'));
-    });
-
-    // ============ RIPPLE EN BOTÓN PRIMARIO ============
-    document.querySelectorAll('.btn-primary').forEach(btn => {
+  // ===== RIPPLE EN BOTÓN PRIMARIO =====
+  function bindRipples() {
+    var btns = document.querySelectorAll('.btn-primary');
+    btns.forEach(function (btn) {
+      if (!btn) return;
       btn.addEventListener('click', function (e) {
-        const rect = this.getBoundingClientRect();
-        const ripple = document.createElement('span');
-        ripple.className = 'ripple';
-        const size = Math.max(rect.width, rect.height);
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-        ripple.style.top  = (e.clientY - rect.top  - size / 2) + 'px';
-        this.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 700);
-      });
-    });
-
-    // ============ THREE.JS — HERO 3D ============
-    (function initHero3D() {
-      if (typeof THREE === 'undefined') return;
-      const canvas = document.getElementById('hero-canvas');
-      // Guard: solo init si la página actual tiene el canvas (solo index.html).
-      if (!canvas) return;
-      const scene  = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-      camera.position.z = 7;
-
-      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
-
-      const stars = (() => {
-        const geo = new THREE.BufferGeometry();
-        const positions = new Float32Array(200 * 3);
-        for (let i = 0; i < 200; i++) {
-          positions[i * 3]     = (Math.random() - 0.5) * 40;
-          positions[i * 3 + 1] = (Math.random() - 0.5) * 40;
-          positions[i * 3 + 2] = (Math.random() - 0.5) * 40;
-        }
-        geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const mat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.04, transparent: true, opacity: 0.7 });
-        const pts = new THREE.Points(geo, mat);
-        scene.add(pts);
-        return pts;
-      })();
-
-      const nodesGroup = new THREE.Group();
-      scene.add(nodesGroup);
-
-      const CUBE_SIZE = 2;
-      const nodes = [];
-      const NODE_SPHERE_GEO = new THREE.SphereGeometry(0.1, 16, 16);
-
-      for (let x = 0; x < 2; x++) for (let y = 0; y < 2; y++) for (let z = 0; z < 2; z++) {
-        const mat = new THREE.MeshBasicMaterial({ color: 0x00D4FF });
-        const sphere = new THREE.Mesh(NODE_SPHERE_GEO, mat);
-        sphere.position.set(
-          (x - 0.5) * CUBE_SIZE,
-          (y - 0.5) * CUBE_SIZE,
-          (z - 0.5) * CUBE_SIZE
-        );
-        sphere.userData.basePos = sphere.position.clone();
-        sphere.userData.exploded = false;
-        nodesGroup.add(sphere);
-        nodes.push(sphere);
-      }
-
-      const linesMat = new THREE.LineBasicMaterial({ color: 0x635BFF, transparent: true, opacity: 0.7 });
-      for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i].position, b = nodes[j].position;
-        const dx = Math.abs(a.x - b.x), dy = Math.abs(a.y - b.y), dz = Math.abs(a.z - b.z);
-        if (dx + dy + dz === CUBE_SIZE) {
-          const geo = new THREE.BufferGeometry().setFromPoints([a, b]);
-          const line = new THREE.Line(geo, linesMat);
-          line.userData.a = i; line.userData.b = j;
-          nodesGroup.add(line);
-        }
-      }
-
-      const targetRot = { x: 0, y: 0 };
-      window.addEventListener('mousemove', (e) => {
-        const nx = (e.clientX / window.innerWidth)  * 2 - 1;
-        const ny = (e.clientY / window.innerHeight) * 2 - 1;
-        targetRot.y = nx * 0.26;
-        targetRot.x = ny * 0.26;
-        stars.rotation.x = ny * 0.1;
-        stars.rotation.y = nx * 0.1;
-      });
-
-      let explodeAmount = 0;
-      window.addEventListener('scroll', () => {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        const p = max > 0 ? window.scrollY / max : 0;
-        explodeAmount = Math.max(0, (p - 0.15) * 1.8);
-      }, { passive: true });
-
-      function animate() {
-        nodesGroup.rotation.y += (targetRot.y - nodesGroup.rotation.y) * 0.05;
-        nodesGroup.rotation.x += (targetRot.x - nodesGroup.rotation.x) * 0.05;
-        nodesGroup.rotation.y += 0.0015;
-        nodesGroup.rotation.x += 0.0008;
-
-        nodes.forEach((n, idx) => {
-          const target = n.userData.basePos.clone().multiplyScalar(1 + explodeAmount * (1 + (idx % 3) * 0.3));
-          n.position.lerp(target, 0.1);
-        });
-
-        nodesGroup.children.forEach(child => {
-          if (child.isLine) {
-            const a = nodes[child.userData.a].position;
-            const b = nodes[child.userData.b].position;
-            child.geometry.setFromPoints([a, b]);
+        try {
+          var rect = btn.getBoundingClientRect();
+          var ripple = document.createElement('span');
+          ripple.className = 'ripple';
+          var size = Math.max(rect.width, rect.height);
+          if (ripple.style) {
+            ripple.style.width = size + 'px';
+            ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            ripple.style.top  = (e.clientY - rect.top  - size / 2) + 'px';
           }
-        });
-
-        renderer.render(scene, camera);
-        requestAnimationFrame(animate);
-      }
-      animate();
-
-      window.addEventListener('resize', () => {
-        camera.aspect = canvas.clientWidth / canvas.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
-      });
-    })();
-
-    // ============ SCROLL PROGRESS BAR (NUEVO) ============
-    // Throttle con requestAnimationFrame para evitar escribir al DOM en
-    // cada evento scroll (en páginas largas se nota).
-    const progressBar = document.getElementById('scrollProgress');
-    let progressTicking = false;
-    const updateProgress = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
-      progressBar.style.width = pct + '%';
-      progressTicking = false;
-    };
-    const onProgressScroll = () => {
-      if (progressTicking) return;
-      progressTicking = true;
-      requestAnimationFrame(updateProgress);
-    };
-    window.addEventListener('scroll', onProgressScroll, { passive: true });
-    window.addEventListener('resize', onProgressScroll, { passive: true });
-    updateProgress();
-
-    // ============ INTERSECTION OBSERVER (fade-in + steps) ============
-    // NOTA: en la versión multi-página el active-link del nav se aplica
-    // server-side (class="is-active" en el HTML de cada página). El viejo
-    // scroll-spy quedó obsoleto al migrar de #anchors a .html files.
-    const fadeEls = document.querySelectorAll('.fade-in, [data-step]');
-
-    const ioNav = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          ioNav.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.fade-in, [data-step]').forEach(el => ioNav.observe(el));
-
-    // ============ STATS COUNTER ANIMADO (NUEVO) ============
-    // Dispara cuando la sección entra en viewport.
-    const animateCount = (el) => {
-      const target = parseInt(el.dataset.count, 10);
-      const suffix = el.dataset.suffix || '';
-      const prefix = el.dataset.prefix || '';
-      const numEl  = el.querySelector('.stat__num');
-      const duration = 1600;
-      const start = performance.now();
-
-      function tick(now) {
-        const t = Math.min(1, (now - start) / duration);
-        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
-        const value = Math.round(target * eased);
-        // textContent (no innerHTML) para que "<24h" se renderice literal,
-        // sin que el "<" se interprete como apertura de tag por el parser.
-        numEl.textContent = `${prefix}${value}${suffix}`;
-        if (t < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    };
-    const ioStats = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCount(entry.target);
-          ioStats.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    document.querySelectorAll('.stat[data-count]').forEach(el => ioStats.observe(el));
-
-    // ============ FORM → WHATSAPP (NUEVO) ============
-    const form = document.getElementById('contactForm');
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name    = document.getElementById('cf-name').value.trim();
-      const email   = document.getElementById('cf-email').value.trim();
-      const message = document.getElementById('cf-message').value.trim();
-
-      // Validación nativa (HTML5 required + minlength)
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      // IMPORTANTE: encodeURIComponent para que caracteres como &, ?, #,
-      // saltos de línea, emojis o espacios en el mensaje NO rompan el URL.
-      const lines = [
-        'Hola 👋 Vengo de kairos-devs.cu.',
-        '',
-        `*Nombre:* ${name}`,
-        `*Email:* ${email}`,
-        `*Mensaje:* ${message}`,
-      ];
-      const url = 'https://wa.me/5305146569?text=' + encodeURIComponent(lines.join('\n'));
-
-      // Truco anti-popup-blocker: creamos un <a> y disparamos .click()
-      // simula navegación iniciada por el usuario → no es bloqueada.
-      const a = document.createElement('a');
-      a.href = url;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-
-      // Estado de éxito en UI + reset del form para próximo envío limpio
-      form.classList.add('is-sent');
-      form.reset();
-      setTimeout(() => form.classList.remove('is-sent'), 4000);
-    });
-
-    // ============ SOCIAL SOON (botones placeholder, sin links todavía) ============
-    // Cualquier click en un [data-social-soon] muestra un toast suave y NO navega.
-    document.querySelectorAll('[data-social-soon]').forEach(el => {
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-        showToast('Próximamente con los enlaces reales 🔗');
+          btn.appendChild(ripple);
+          setTimeout(function () { if (ripple && ripple.remove) ripple.remove(); }, 700);
+        } catch (_) {}
       });
     });
+  }
 
-    // Helper global de toast (reusable para cualquier feedback transitorio)
-    const showToast = (msg, ms = 2500) => {
-      let t = document.getElementById('globalToast');
-      if (!t) {
-        t = document.createElement('div');
-        t.id = 'globalToast';
-        t.style.cssText = [
-          'position:fixed', 'top:84px', 'right:20px',
-          'background:rgba(0,212,255,.95)', 'color:#001b22',
-          'padding:10px 16px', 'border-radius:8px',
-          'font-weight:600', 'font-size:.88rem',
-          'z-index:1000', 'opacity:0',
-          'transition:opacity .3s ease',
-          'box-shadow:0 10px 30px rgba(0,0,0,.4)',
-          'pointer-events:none',
-        ].join(';');
-        document.body.appendChild(t);
-      }
-      t.textContent = msg;
-      t.style.opacity = '1';
-      clearTimeout(t._hide);
-      t._hide = setTimeout(() => { t.style.opacity = '0'; }, ms);
-    };
+  // ===== INIT V2: Lenis + magnetic + reveal =====
+  function initV2() {
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // ============ COPY EMAIL (FOOTER) ============
-    const copyBtn = document.getElementById('copyEmail');
-    copyBtn?.addEventListener('click', async () => {
+    // Lenis smooth scroll (sólo si el CDN lo cargó + no reduced-motion)
+    if (!reduced && typeof window.Lenis === 'function') {
       try {
-        await navigator.clipboard.writeText('enmanuelmuletblanco@gmail.com');
-      } catch {
-        const ta = document.createElement('textarea');
-        ta.value = 'enmanuelmuletblanco@gmail.com';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        ta.remove();
-      }
-      copyBtn.classList.add('is-copied');
-      setTimeout(() => copyBtn.classList.remove('is-copied'), 1800);
-    });
+        var lenis = new window.Lenis({ duration: 1.1, smoothWheel: true });
+        function raf(time) { try { lenis.raf(time); } catch(_) {} requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+      } catch (_) { /* silent */ }
+    }
 
-    // ============ YEAR FOOTER ============
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ============ MENÚ MÓVIL ============
-    const burger = document.getElementById('burger');
-    burger?.addEventListener('click', () => {
-      document.querySelector('.nav__links')?.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded',
-        burger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
-    });
-    document.querySelectorAll('.nav__links a').forEach(a => {
-      a.addEventListener('click', () => {
-        document.querySelector('.nav__links')?.classList.remove('is-open');
-        burger?.setAttribute('aria-expanded', 'false');
+    // Magnetic cursor: mueve el elemento un poco con el mouse
+    var magnets = document.querySelectorAll('[data-magnetic]');
+    magnets.forEach(function (el) {
+      if (!el) return;
+      el.addEventListener('mousemove', function (e) {
+        if (reduced) return;
+        try {
+          var r = el.getBoundingClientRect();
+          var x = e.clientX - r.left - r.width / 2;
+          var y = e.clientY - r.top - r.height / 2;
+          el.style.transform = 'translate(' + (x * 0.2) + 'px,' + (y * 0.2) + 'px)';
+        } catch (_) {}
+      });
+      el.addEventListener('mouseleave', function () {
+        try { el.style.transform = ''; } catch (_) {}
       });
     });
-  
+
+    // Reveal-on-scroll observer
+    var reveals = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window && reveals.length) {
+      try {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting && en.target && en.target.classList) {
+              en.target.classList.add('is-visible');
+              io.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        reveals.forEach(function (el) { io.observe(el); });
+      } catch (_) { /* silent */ }
+    }
+
+    // Reveal-on-scroll observer para .fade-in (el CSS pone opacity:0; sin observer quedan invisibles)
+    var fadeIns = document.querySelectorAll('.fade-in:not(.is-visible)');
+    if ('IntersectionObserver' in window && fadeIns.length) {
+      try {
+        var ioF = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting && en.target && en.target.classList && !en.target.classList.contains('is-visible')) {
+              en.target.classList.add('is-visible');
+              ioF.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        fadeIns.forEach(function (el) { ioF.observe(el); });
+      } catch (_) { /* silent */ }
+    } else if (fadeIns.length) {
+      try { fadeIns.forEach(function (el) { if (el && el.classList) el.classList.add('is-visible'); }); } catch (_) {}
+    }
+
+    // Anti-flash: marcar visibles los .fade-in que YA están en viewport en el primer paint.
+    // Una sola pasada de rects en batch — evita 30 reflows individuales.
+    try {
+      var winH = window.innerHeight;
+      var aboveFold = [];
+      var rects = [];
+      for (var k = 0; k < fadeIns.length; k++) rects.push(fadeIns[k].getBoundingClientRect());
+      for (var kk = 0; kk < fadeIns.length; kk++) {
+        var r = rects[kk];
+        if (r.top < winH && r.bottom > 0) aboveFold.push(fadeIns[kk]);
+      }
+      for (var af = 0; af < aboveFold.length; af++) {
+        if (aboveFold[af] && aboveFold[af].classList) aboveFold[af].classList.add('is-visible');
+      }
+      // Los que NO están arriba del fold quedan observados por ioF para revelado on-scroll.
+    } catch (_) {}
+  }
+
+
+  // ===== CURSOR FOLLOWER (Lenis ya está en initV2) =====
+
+  function initCursorFollower() {
+    // 1:1 con el mouse, sin lerp ni rAF — se siente nativo, no “atrapa” ni “pesa”
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var dot = document.getElementById('cursorDot');
+    var ring = document.getElementById('cursorRing');
+    if (!dot || !ring) return;
+    window.addEventListener('mousemove', function (e) {
+      try {
+        dot.style.left  = e.clientX + 'px';
+        dot.style.top   = e.clientY + 'px';
+        ring.style.left = e.clientX + 'px';
+        ring.style.top  = e.clientY + 'px';
+      } catch (_) {}
+    }, { passive: true });
+    var HOVER_SEL = 'a,button,[data-hover],[data-magnetic],input,textarea,select,label';
+    document.addEventListener('mouseover', function (e) {
+      if (e.target && e.target.closest && e.target.closest(HOVER_SEL)) ring.classList.add('is-hover');
+    }, { passive: true });
+    document.addEventListener('mouseout', function (e) {
+      var t = e.relatedTarget;
+      if (!t || !(t.closest && t.closest(HOVER_SEL))) ring.classList.remove('is-hover');
+    }, { passive: true });
+  }
+
+  // ===== INIT FONDO ESTÁTICO (imagen hero-bg.jfif vía CSS background-image) =====
+  function initCodeBg() {
+    if (!document.body) return;
+    try {
+      var bg = document.createElement('div');
+      bg.className = 'code-bg';
+      bg.setAttribute('aria-hidden', 'true');
+      document.body.insertBefore(bg, document.body.firstChild);
+    } catch (_) {}
+  }
+
+  // ===== INIT FORMULARIO CONTACTO → WhatsApp =====
+  // Liga id="contactForm"; al hacer submit toma los campos y abre wa.me
+  // con un mensaje pre-armado. Si el popup es bloqueado, muestra fallback en pantalla.
+  function initContactForm() {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    try {
+      var WA_PHONE  = '5305146569';
+      var submitBtn = form.querySelector('.form__submit');
+      var success   = form.querySelector('.form__success');
+
+      function read(name) {
+        var el = form.querySelector('[name="' + name + '"]');
+        return (el && el.value) ? el.value.trim() : '';
+      }
+
+      function buildMsg() {
+        var lines = [];
+        var name    = read('name');
+        var service = read('service');
+        var budget  = read('budget');
+        var message = read('message');
+
+        if (name)    lines.push('Hola Kairos-Devs, soy ' + name + '.');
+        else         lines.push('Hola Kairos-Devs!');
+        if (service) lines.push('Servicio: ' + service);
+        if (budget)  lines.push('Presupuesto aproximado: ' + budget);
+        if (message) lines.push('\nMensaje:\n' + message);
+        lines.push('\n— Vengo del formulario de kairos-devs.cu');
+        return lines.join('\n');
+      }
+
+      function showFallback(url) {
+        if (!success) return;
+        success.innerHTML =
+          '<i class="fa-brands fa-whatsapp"></i> ' +
+          'No pudimos abrir WhatsApp automáticamente. ' +
+          '<a href="' + url + '" target="_blank" rel="noopener">Haz click aquí</a> ' +
+          'para abrirlo manualmente.';
+        success.style.display = 'block';
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        try {
+          var msg  = buildMsg();
+          var name = read('name');
+          var body = read('message');
+          if (!name && !body) {
+            var firstIn = form.querySelector('input,textarea');
+            if (firstIn) firstIn.focus();
+            return;
+          }
+          var url = 'https://wa.me/' + WA_PHONE + '?text=' + encodeURIComponent(msg);
+
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            var prevText = submitBtn.innerHTML;
+            submitBtn.setAttribute('data-orig', prevText);
+            submitBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Abriendo WhatsApp…';
+          }
+
+          var win = window.open(url, '_blank', 'noopener');
+          // Si el popup fue bloqueado, mostramos fallback visible
+          setTimeout(function () {
+            if (!win || win.closed) {
+              showFallback(url);
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = submitBtn.getAttribute('data-orig') || prevText;
+              }
+            } else {
+              if (success) {
+                success.innerHTML =
+                  '<i class="fa-brands fa-whatsapp"></i> ' +
+                  '¡Listo! WhatsApp se abrió con tu mensaje. ' +
+                  'Si no lo ves, <a href="' + url + '" target="_blank" rel="noopener">haz click aquí</a>.';
+                success.style.display = 'block';
+              }
+            }
+          }, 400);
+        } catch (_) {
+          /* silent */
+        }
+      });
+    } catch (_) {
+      /* silent */
+    }
+  }
+
+  // ===== INIT ALL =====
+  try { bindRipples(); } catch (_) {}
+  try { initV2(); } catch (_) {}
+  try { initCursorFollower(); } catch (_) {}
+  try { initCodeBg(); } catch (_) {}
+  try { initContactForm(); } catch (_) {}
+})();

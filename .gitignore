@@ -3,6 +3,13 @@
 server.log
 temp_server.log
 
+# ── Internal project artifacts (briefings, prompts, internal docs) ──
+kairos promt.txt
+kairos promt.md
+promt.txt
+briefing.txt
+brief.md
+
 # ── Stray Windows null-device file (artifact of a bad redirect) ──
 nul
 nul.txt
